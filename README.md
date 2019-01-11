@@ -5,6 +5,7 @@ Apart from information found in Wiki this repository will contain other document
 
 ## Structure
 
-TODO
+* [**Wiki**](https://github.com/mobilabsolutions/payment-sdk-wiki-open/wiki) - All documentation related to processes and organisation of the projects as well as documentation that is common to Mobile/Backend/Web
+
 
 
