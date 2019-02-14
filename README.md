@@ -15,7 +15,7 @@ Apart from information found in Wiki this repository will contain other document
 
 ![refund](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/refund_cc/Refund%20CC%20Transaction.png?token=ADzKSAQSAfn-DwG7ir3_JYpXo62FYwdDks5cbpevwA%3D%3D)
 
-![chargeback](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/chargeback_cc/Chargeback%20CC%20Transaction.png?token=ADzKSGHQZXT4Y9KqJg1w4jqFwK0Q5fVEks5cbpfYwA%3D%3D)
+![chargeback](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/chargeback_cc/Chargeback%20CC%20Transaction.png?token=ADzKSJNsng-GS3PgmJLv7Tc5rh0WgVJFks5cbqmxwA%3D%3D)
 
 ![sepa](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/sepa_transaction/Sepa%20Transaction.png?token=ADzKSOlCg_DoZSe1ydrCzpZhxyKJR7oIks5cbpf_wA%3D%3D)
 
