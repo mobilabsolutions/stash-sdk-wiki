@@ -3,11 +3,11 @@
 title "CC Transaction"
 
 actor "User / SDK" as User
-entity "Mechant Backend" as MEC
-control "Mobilab Backend" as MBE
+entity "Merchant Backend" as MEC
+control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MBE: GetPSP(forCC, MechantId)
+User -> MBE: GetPSP(forCC, MerchantId)
 MBE -> User: URL
 
 User -> PSP: CC Data

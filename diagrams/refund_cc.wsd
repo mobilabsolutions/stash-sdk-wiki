@@ -3,17 +3,17 @@
 title "Refund CC Transaction"
 
 actor "User" as User
-actor "Mechant" as Mechant
-control "Mobilab Backend" as MBE
+actor "Merchant" as Merchant
+control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
-entity "Mechant Backend" as MEC
+entity "Merchant Backend" as MEC
 
-User -> Mechant: Ask for Redund
-Mechant -> MBE: Initiates Refund (transactionId)
+User -> Merchant: Ask for Redund
+Merchant -> MBE: Initiates Refund (transactionId)
 MBE -> PSP: Process Refund (token, amount)
 PSP -> MBE: Confirms Refund
 MBE -> MEC: Notifies about Refund
-MBE -> Mechant: Confirms Refund
-Mechant -> User: Confirms Refund
+MBE -> Merchant: Confirms Refund
+Merchant -> User: Confirms Refund
 
 @enduml

@@ -3,12 +3,12 @@
 title "CC Transaction 3D Secure"
 
 actor "User / SDK" as User
-entity "Mechant Backend" as MEC
-control "Mobilab Backend" as MBE
+entity "Merchant Backend" as MEC
+control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 database "Bank" 
 
-User -> MBE: GetPSP(forCC, MechantId)
+User -> MBE: GetPSP(forCC, MerchantId)
 MBE -> User: URL
 
 User -> PSP: CC Data
@@ -16,7 +16,7 @@ PSP -> User: Token
 
 User -> MEC: Checkout (Token)
 MEC -> MBE: Auth(x€, "Reason", Token, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Token, MechantId, TransactionId)
+MBE -> PSP: Auth(x€, "Reason", Token, MerchantId, TransactionId)
 PSP -> Bank: Auth(x€, "Reason", CCData)
 Bank -> PSP: Need 3d Secure + URL
 PSP -> MBE: Need 3d Secure + URL

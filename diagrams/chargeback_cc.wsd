@@ -5,8 +5,8 @@ title "Refund CC Transaction"
 actor "User" as User
 database "Bank" as Bank
 entity "Payment Provider (PSP)" as PSP
-control "Mobilab Backend" as MBE
-entity "Mechant Backend" as MEC
+control "MobiLab Backend" as MBE
+entity "Merchant Backend" as MEC
 
 User -> Bank: Wants Chargeback
 Bank -> PSP: Informs about Chargeback
