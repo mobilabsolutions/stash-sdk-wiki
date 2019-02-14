@@ -1,0 +1,17 @@
+@startuml
+
+title "Refund CC Transaction"
+
+actor "User" as User
+database "Bank" as Bank
+entity "Payment Provider (PSP)" as PSP
+control "Mobilab Backend" as MBE
+entity "Mechant Backend" as MEC
+
+User -> Bank: Wants Chargeback
+Bank -> PSP: Informs about Chargeback
+PSP -> MBE: Informs about Chargeback
+MBE -> MEC: Informs about Chargeback
+MEC -> User: Deactivate Account
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+
+title "Paypal Transaction"
+
+actor "User / SDK" as User
+entity "Paypal Sdk" as PAS
+entity "Paypal" as PAB
+control "Mobilab Backend" as MBE
+entity "Mechant Backend" as MEC
+
+User -> MEC: GetAount
+MEC -> User: Amount
+User -> MBE: GetPaypalConfirmUrl (Amount, MechantId)
+MBE -> User: Url
+User -> PAS: ConfirmURL, Amount
+PAS -> PAB: Authorize Amount
+PAB -> MBE: Call ConfirmURL
+MBE -> MEC: Confirm if all OK 
+PAB -> PAS: Response
+PAS -> User: Response
+User -> MEC: All Ok?
+MEC -> User: OK!
+@enduml
