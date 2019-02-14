@@ -1,5 +1,18 @@
 @startuml
 
+skinparam handwritten true
+skinparam ControlBorderColor #035C58
+skinparam ControlBackgroundColor #08E8DE
+skinparam sequenceMessageAlign center
+skinparam EntityBackgroundColor #08E8DE
+skinparam EntityBorderColor #035C58
+skinparam DatabaseBackgroundColor #08E8DE
+skinparam DatabaseBorderColor #035C58
+skinparam ActorBackgroundColor #08E8DE
+skinparam ActorBorderColor #035C58
+skinparam ArrowColor #035C58
+skinparam SequenceLifeLineBorderColor #035C58
+
 title "Paypal Transaction"
 
 actor "User / SDK" as User

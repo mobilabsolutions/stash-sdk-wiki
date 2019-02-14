@@ -5,7 +5,7 @@ Apart from information found in Wiki this repository will contain other document
 
 ## Structure
 
-* [**Wiki**](https://github.com/mobilabsolutions/payment-sdk-wiki-open/wiki) - All documentation related to processes and organisation of the projects as well as documentation that is common to Mobile/Backend/Web
+- [**Wiki**](https://github.com/mobilabsolutions/payment-sdk-wiki-open/wiki) - All documentation related to processes and organisation of the projects as well as documentation that is common to Mobile/Backend/Web
 
 ## Diagrams
 
@@ -15,10 +15,10 @@ Apart from information found in Wiki this repository will contain other document
 
 ![refund](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/refund_cc/Refund%20CC%20Transaction.png?token=ADzKSAQSAfn-DwG7ir3_JYpXo62FYwdDks5cbpevwA%3D%3D)
 
-![chargeback](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/chargeback_cc/Refund%20CC%20Transaction.png?token=ADzKSGHQZXT4Y9KqJg1w4jqFwK0Q5fVEks5cbpfYwA%3D%3D)
+![chargeback](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/chargeback_cc/Chargeback%20CC%20Transaction.png?token=ADzKSGHQZXT4Y9KqJg1w4jqFwK0Q5fVEks5cbpfYwA%3D%3D)
 
 ![sepa](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/sepa_transaction/Sepa%20Transaction.png?token=ADzKSOlCg_DoZSe1ydrCzpZhxyKJR7oIks5cbpf_wA%3D%3D)
 
-![sepa](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/sepa_transaction_fail/Failed%20Sepa%20Transaction.png?token=ADzKSFT-8ocYgbaWRmna-U-qSiSKVWscks5cbphgwA%3D%3D)
+![sepa failed](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/sepa_transaction_fail/Failed%20Sepa%20Transaction.png?token=ADzKSFT-8ocYgbaWRmna-U-qSiSKVWscks5cbphgwA%3D%3D)
 
-![sepa](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/paypal/Paypal%20Transaction.png?token=ADzKSFPkIlnl_fYj4BgbI6or9zV4PFJNks5cbpiSwA%3D%3D)
+![paypal](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/out/diagrams/paypal/Paypal%20Transaction.png?token=ADzKSFPkIlnl_fYj4BgbI6or9zV4PFJNks5cbpiSwA%3D%3D)
