@@ -1,0 +1,25 @@
+@startuml
+
+title "CC Transaction"
+
+actor "User / SDK" as User
+entity "Mechant Backend" as MEC
+control "Mobilab Backend" as MBE
+entity "Payment Provider (PSP)" as PSP
+
+User -> MBE: Get PSP forCC
+MBE -> User: URL
+
+User -> PSP: CC Data
+PSP -> User: Token
+
+User -> MEC: Checkout (Token)
+MEC -> MBE: Auth(x€, "Reason", Token, PurchaseId)
+MBE -> PSP: Auth(x€, "Reason", Token)
+PSP -> MBE: Result
+MBE -> MEC: Result + TransactionId
+MEC -> User: Result
+
+MBE -> PSP: Capture Payment (after 20 min)
+
+@enduml
