@@ -1,16 +1,16 @@
 @startuml
 
-title "CC Transaction"
+title "Sepa Transaction"
 
 actor "User / SDK" as User
 entity "Mechant Backend" as MEC
 control "Mobilab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MBE: GetPSP(forCC, MechantId)
+User -> MBE: GetPSP(forSepa, MechantId)
 MBE -> User: URL
 
-User -> PSP: CC Data
+User -> PSP: IBAN, and Account Data
 PSP -> User: Token
 
 User -> MEC: Checkout (Token)
@@ -20,6 +20,7 @@ PSP -> MBE: Result
 MBE -> MEC: Result + TransactionId
 MEC -> User: Result
 
-MBE -> PSP: Capture Payment (after 20 min)
+PSP -> MBE: Confirmation Payment (up to one 1 business day later)
+MBE -> MEC: Confirmation Payment (PuchaseId, TransactionId)
 
 @enduml

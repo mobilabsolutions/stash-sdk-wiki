@@ -8,7 +8,7 @@ control "Mobilab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 database "Bank" 
 
-User -> MBE: Get PSP forCC
+User -> MBE: GetPSP(forCC, MechantId)
 MBE -> User: URL
 
 User -> PSP: CC Data
