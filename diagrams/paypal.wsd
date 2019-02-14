@@ -8,7 +8,7 @@ entity "Paypal" as PAB
 control "Mobilab Backend" as MBE
 entity "Mechant Backend" as MEC
 
-User -> MEC: GetAount
+User -> MEC: GetAmount / perpare checkout
 MEC -> User: Amount
 User -> MBE: GetPaypalConfirmUrl (Amount, MechantId)
 MBE -> User: Url
