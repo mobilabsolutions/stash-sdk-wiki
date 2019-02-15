@@ -6,25 +6,25 @@ skinparam ControlBackgroundColor #08E8DE
 skinparam sequenceMessageAlign center
 skinparam EntityBackgroundColor #08E8DE
 skinparam EntityBorderColor #035C58
-skinparam DatabaseBackgroundColor #08E8DE
-skinparam DatabaseBorderColor #035C58
 skinparam ActorBackgroundColor #08E8DE
 skinparam ActorBorderColor #035C58
 skinparam ArrowColor #035C58
 skinparam SequenceLifeLineBorderColor #035C58
 
-title "Chargeback CC Transaction"
+title Refund CC Transaction
 
 actor "User" as User
-database "Bank" as Bank
-entity "Payment Provider (PSP)" as PSP
+actor "Merchant" as Merchant
 control "MobiLab Backend" as MBE
+entity "Payment Provider (PSP)" as PSP
 entity "Merchant Backend" as MEC
 
-User -> Bank: Wants Chargeback
-Bank -> PSP: Informs about Chargeback
-PSP -> MBE: Informs about Chargeback
-MBE -> MEC: Informs about Chargeback
-MEC -> User: Deactivate Account
+User -> Merchant: Ask for Redund
+Merchant -> MBE: Initiates Refund (transactionId)
+MBE -> PSP: Process Refund (token, amount)
+PSP -> MBE: Confirms Refund
+MBE -> MEC: Notifies about Refund
+MBE -> Merchant: Confirms Refund
+Merchant -> User: Confirms Refund
 
 @enduml

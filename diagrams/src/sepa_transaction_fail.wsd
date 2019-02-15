@@ -1,28 +1,27 @@
 @startuml
+
 skinparam handwritten true
 skinparam ControlBorderColor #035C58
 skinparam ControlBackgroundColor #08E8DE
 skinparam sequenceMessageAlign center
 skinparam EntityBackgroundColor #08E8DE
 skinparam EntityBorderColor #035C58
-skinparam DatabaseBackgroundColor #08E8DE
-skinparam DatabaseBorderColor #035C58
 skinparam ActorBackgroundColor #08E8DE
 skinparam ActorBorderColor #035C58
 skinparam ArrowColor #035C58
 skinparam SequenceLifeLineBorderColor #035C58
 
-title "CC Transaction"
+title Failed Sepa Transaction
 
 actor "User / SDK" as User
 entity "Merchant Backend" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MBE: GetPSP(forCC, MerchantId)
+User -> MBE: GetPSP(forSepa, MerchantId)
 MBE -> User: URL
 
-User -> PSP: CC Data
+User -> PSP: IBAN, and Account Data
 PSP -> User: Token
 
 User -> MEC: Checkout (Token)
@@ -32,6 +31,8 @@ PSP -> MBE: Result
 MBE -> MEC: Result + TransactionId
 MEC -> User: Result
 
-MBE -> PSP: Capture Payment (after 20 min)
+PSP -> MBE: Payment failed (up to one 1 business day later)
+MBE -> MEC: Payment failed (PuchaseId, TransactionId)
+MEC -> User: Email to User / Deactivate Account
 
 @enduml

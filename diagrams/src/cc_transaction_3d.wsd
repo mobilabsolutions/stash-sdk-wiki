@@ -5,20 +5,18 @@ skinparam ControlBackgroundColor #08E8DE
 skinparam sequenceMessageAlign center
 skinparam EntityBackgroundColor #08E8DE
 skinparam EntityBorderColor #035C58
-skinparam DatabaseBackgroundColor #08E8DE
-skinparam DatabaseBorderColor #035C58
 skinparam ActorBackgroundColor #08E8DE
 skinparam ActorBorderColor #035C58
 skinparam ArrowColor #035C58
 skinparam SequenceLifeLineBorderColor #035C58
 
-title "CC Transaction 3D Secure"
+title CC Transaction 3D Secure
 
 actor "User / SDK" as User
 entity "Merchant Backend" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
-database "Bank" 
+entity "Bank" 
 
 User -> MBE: GetPSP(forCC, MerchantId)
 MBE -> User: URL
