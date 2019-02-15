@@ -1,15 +1,26 @@
 @startuml
 
 skinparam handwritten true
-skinparam ControlBorderColor #035C58
-skinparam ControlBackgroundColor #08E8DE
 skinparam sequenceMessageAlign center
-skinparam EntityBackgroundColor #08E8DE
-skinparam EntityBorderColor #035C58
 skinparam ActorBackgroundColor #08E8DE
 skinparam ActorBorderColor #035C58
+skinparam ActorFontColor #172935
+skinparam ActorFontName Raleway
 skinparam ArrowColor #035C58
+skinparam ArrowFontColor #172935
+skinparam ArrowFontName Raleway
+skinparam ControlBackgroundColor #08E8DE
+skinparam ControlBorderColor #035C58
+skinparam ControlFontColor #172935
+skinparam ControlFontName Raleway
+skinparam EntityBackgroundColor #08E8DE
+skinparam EntityBorderColor #035C58
+skinparam EntityFontColor #172935
+skinparam EntityFontName Raleway
 skinparam SequenceLifeLineBorderColor #035C58
+skinparam SequenceTitleFontColor #172935
+skinparam SequenceTitleFontName Raleway
+skinparam SequenceTitleFontSize 25
 
 title Paypal Transaction
 
