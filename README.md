@@ -22,3 +22,7 @@ Apart from information found in Wiki this repository will contain other document
 ![sepa failed](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Failed%20Sepa%20Transaction.png?token=ADzKSAIK3YVycwG6C1l6uKkpujYMbmNmks5cb85_wA%3D%3D)
 
 ![paypal](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Paypal%20Transaction.png?token=ADzKSGCie1liBfPLu6E6KS6_xNwnlgRxks5cb86ewA%3D%3D)
+
+![klarna](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Klarna.png?token=ADzKSB_7Pzov92SaQ6QOG0E0dO7lnCWjks5cc8OFwA%3D%3D)
+
+![report](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Report.png?token=ADzKSGhEJMdW0bciiikPYodaI3aXmx9wks5cc8PmwA%3D%3D)
