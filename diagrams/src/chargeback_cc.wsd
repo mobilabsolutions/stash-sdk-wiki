@@ -1,6 +1,6 @@
 @startuml
 
-!include ./skin.wsd
+!include ../skin.wsd
 
 title Chargeback CC Transaction
 
