@@ -1,0 +1,20 @@
+@startuml
+
+!include ./skin.wsd
+
+title Delete Payment Data
+
+actor "User / SDK" as User
+control "MobiLab Backend" as MBE
+entity "Payment Provider (PSP)" as PSP
+entity "Mecheant Backend" as MEC
+
+User -> MBE: PrepareUpdatePayment(forSepa, MerchantId)
+MBE -> User: URL
+
+User -> PSP: Send New Date / Token
+PSP -> User: OK
+PSP -> MBE: Notifies
+MBE -> MEC: Notifies
+
+@enduml
