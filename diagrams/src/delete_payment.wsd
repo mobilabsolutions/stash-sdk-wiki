@@ -9,7 +9,7 @@ control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 entity "Mecheant Backend" as MEC
 
-User -> MBE: PrepareUpdatePayment(forSepa, MerchantId)
+User -> MBE: PrepareDeletePayment(MerchantId)
 MBE -> User: URL
 
 User -> PSP: Delete Token
