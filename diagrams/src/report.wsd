@@ -1,0 +1,37 @@
+@startuml
+
+skinparam handwritten true
+skinparam sequenceMessageAlign center
+skinparam ActorBackgroundColor #08E8DE
+skinparam ActorBorderColor #035C58
+skinparam ActorFontColor #172935
+skinparam ActorFontName Raleway
+skinparam ArrowColor #035C58
+skinparam ArrowFontColor #172935
+skinparam ArrowFontName Raleway
+skinparam BackgroundColor #F5FEFE
+skinparam ControlBackgroundColor #08E8DE
+skinparam ControlBorderColor #035C58
+skinparam ControlFontColor #172935
+skinparam ControlFontName Raleway
+skinparam DiagramBorderColor #172935
+skinparam DiagramBorderThickness 5
+skinparam EntityBackgroundColor #08E8DE
+skinparam EntityBorderColor #035C58
+skinparam EntityFontColor #172935
+skinparam EntityFontName Raleway
+skinparam SequenceLifeLineBorderColor #035C58
+skinparam SequenceTitleFontColor #172935
+skinparam SequenceTitleFontName Raleway
+skinparam SequenceTitleFontSize 25
+
+title Report
+
+actor "Merchant" as MEC
+control "MobiLab Backend" as MBE
+
+MEC -> MBE: Get Export (UI / API)
+MBE -> MEC: Report (Excel, CSV, PDF)
+MBE -> MEC: Daily / Weekly / Monthly Report (Mail, API Call)
+
+@enduml
