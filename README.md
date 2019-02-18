@@ -21,9 +21,13 @@ Apart from information found in Wiki this repository will contain other document
 
 ![chargeback](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Chargeback%20CC%20Transaction.png?token=ADzKSHj80V4pK7e1qjsSEu2cr6-Su7muks5cb85LwA%3D%3D)
 
-![sepa](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Sepa%20Transaction.png?token=ADzKSAchNoyP9wztw6VNBmPm2Kch24QOks5cb85owA%3D%3D)
+![sepa_registration](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Sepa%20Registration.png?token=ADzKSL0xk4CK8bIMOwHlcko44-vvAHYMks5cc88gwA%3D%3D)
 
-![sepa failed](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Failed%20Sepa%20Transaction.png?token=ADzKSAIK3YVycwG6C1l6uKkpujYMbmNmks5cb85_wA%3D%3D)
+![sepa_payment](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Sepa%20Payment%20of%20registered%20User.png?token=ADzKSPlrRafbqvBxFA1svlWWyltB81jyks5cc89RwA%3D%3D)
+
+![sepa_transaction](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Sepa%20Transaction.png?token=ADzKSAchNoyP9wztw6VNBmPm2Kch24QOks5cb85owA%3D%3D)
+
+![sepa_failed](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Failed%20Sepa%20Transaction.png?token=ADzKSAIK3YVycwG6C1l6uKkpujYMbmNmks5cb85_wA%3D%3D)
 
 ![paypal](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Paypal%20Transaction.png?token=ADzKSGCie1liBfPLu6E6KS6_xNwnlgRxks5cb86ewA%3D%3D)
 
