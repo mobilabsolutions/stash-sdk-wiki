@@ -33,4 +33,6 @@ Apart from information found in Wiki this repository will contain other document
 
 ![klarna](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Klarna.png?token=ADzKSB_7Pzov92SaQ6QOG0E0dO7lnCWjks5cc8OFwA%3D%3D)
 
+![delete Alias](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Delete%20Payment%20Data.png?token=ADzKSIlH9ML_oLwkuvRbxIBbkOnmsn05ks5cc9HewA%3D%3D)
+
 ![report](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Report.png?token=ADzKSGhEJMdW0bciiikPYodaI3aXmx9wks5cc8PmwA%3D%3D)
