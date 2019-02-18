@@ -12,7 +12,7 @@ entity "Mecheant Backend" as MEC
 User -> MBE: PrepareUpdatePayment(forSepa, MerchantId)
 MBE -> User: URL
 
-User -> PSP: Send New Date / Token
+User -> PSP: Delete Token
 PSP -> User: OK
 PSP -> MBE: Notifies
 MBE -> MEC: Notifies
