@@ -1,0 +1,22 @@
+@startuml
+
+!include ./skin.wsd
+
+title Sepa Payment of registered User
+
+actor "User / SDK" as User
+entity "Merchant Backend" as MEC
+control "MobiLab Backend" as MBE
+entity "Payment Provider (PSP)" as PSP
+
+User -> MEC: Checkout (Token)
+MEC -> MBE: Auth(x€, "Reason", Token, PurchaseId)
+MBE -> PSP: Auth(x€, "Reason", Token)
+PSP -> MBE: Result
+MBE -> MEC: Result + TransactionId
+MEC -> User: Result
+
+PSP -> MBE: Confirmation Payment (up to one 1 business day later)
+MBE -> MEC: Confirmation Payment (PuchaseId, TransactionId)
+
+@enduml
