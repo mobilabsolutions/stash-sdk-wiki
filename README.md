@@ -9,6 +9,10 @@ Apart from information found in Wiki this repository will contain other document
 
 ## Diagrams
 
+![cc_registration](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/CC%20Registration.png?token=ADzKSJ-NEvm8cyh_cXqcWF9yJXesIayRks5cc836wA%3D%3D)
+
+![cc_payment](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/CC%20Payment%20of%20registered%20User.png?token=ADzKSGc8w8xb5UyhQ710tbZOxUEK7D18ks5cc84mwA%3D%3D)
+
 ![cc_transaction](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/CC%20Transaction.png?token=ADzKSGrSg9XPMFM4Bkp0xEICLTODUp75ks5cb84EwA%3D%3D)
 
 ![cc_transaction_3d](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/CC%20Transaction%203D%20Secure.png?token=ADzKSDNKOhYZsac068AcPemeqPQQ4nT2ks5cb84ewA%3D%3D)
