@@ -1,6 +1,6 @@
 # Plantuml
 
-## about
+## About
 
 Is a small tool for various diagram types, see also:
 http://plantuml.com/
