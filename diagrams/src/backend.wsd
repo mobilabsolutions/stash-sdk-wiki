@@ -7,6 +7,7 @@ title Node thinking brainstorming
 component AndroidSDK
 component IosSDK
 component Dashboard
+component "Merchant Backend" as MEC
 
 package User {
   component Manager
@@ -33,6 +34,8 @@ Processor -> Agregator
 
 AndroidSDK .-> Processor
 IosSDK .-> Processor
+MEC .-> Processor
+
 Processor .-> Paypal
 Processor .-> BSOne
 Processor .-> Klarna
