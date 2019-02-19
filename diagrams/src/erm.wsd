@@ -22,7 +22,7 @@ package BaseData {
     class Merchant_PaymentServiceProvider {
         + mechant_id
         + psp_id
-        - creditions
+        - data
         - ...
     }
 
@@ -68,5 +68,4 @@ package TransactionData {
     }
 }
 
-BaseData -[hidden]-> TransactionData
 @enduml
