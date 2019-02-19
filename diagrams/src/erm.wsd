@@ -40,9 +40,15 @@ package BaseData {
         - data
     }
 
+    class SdkToken {
+        + merchant_id
+        + Token
+    }
+
     Merchant_PaymentServiceProvider .> Merchant
     PaymentServiceProvider <-. Merchant_PaymentServiceProvider
     Merchant <-. User
+    Merchant <-. SdkToken
 }
 
 package TransactionData {
