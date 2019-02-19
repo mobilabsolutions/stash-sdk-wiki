@@ -38,4 +38,7 @@ skinparam SequenceLifeLineBorderColor #035C58
 skinparam SequenceTitleFontColor #172935
 skinparam SequenceTitleFontName Raleway
 skinparam SequenceTitleFontSize 25
+skinparam TitleFontColor #172935
+skinparam TitleFontName Raleway
+skinparam TitleFontSize 25
 @enduml
