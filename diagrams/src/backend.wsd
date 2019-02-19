@@ -1,0 +1,44 @@
+@startuml backend
+
+!include ../skin.wsd
+
+component AndroidSDK
+component IOSSDK
+component Dashboard
+
+package User {
+  component Manager
+  component Login
+}
+
+package BaseData {
+  component Controller
+}
+
+package Transaction {
+  component Processor
+  component Agregator
+}
+
+package Adapter {
+  component BSOne
+  component Paypal
+  component Klarna
+  component Stripe
+}
+
+Processor -> Agregator
+
+AndroidSDK .-> Processor
+IOSSDK .-> Processor
+Processor .-> Paypal
+Processor .-> BSOne
+Processor .-> Klarna
+Processor .-> Stripe
+
+Dashboard .-> Login
+Dashboard .-> Manager
+Dashboard .-> Controller
+Dashboard .-> Agregator
+
+@enduml
