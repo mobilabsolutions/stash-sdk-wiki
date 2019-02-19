@@ -23,7 +23,7 @@ Is some kind of Markdown for diagrams.
 
   https://plugins.jetbrains.com/plugin/7017-plantuml-integration
 
-## Mobilab skin
+## MobiLab skin
 
 See https://github.com/mobilabsolutions/payment-sdk-wiki-open/blob/master/diagrams/skin.wsd
 
