@@ -7,7 +7,7 @@ title Delete Payment Data
 actor "User / SDK" as User
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
-entity "Mecheant Backend" as MEC
+entity "Mechant Backend" as MEC
 
 User -> MBE: PrepareDeletePayment(MerchantId)
 MBE -> User: URL

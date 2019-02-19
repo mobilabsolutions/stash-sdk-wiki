@@ -32,6 +32,14 @@ package BaseData {
         - ...
     }
 
+    class History {
+        + id
+        - table_name
+        - prim_key
+        - timestamp
+        - data
+    }
+
     Merchant_PaymentServiceProvider .> Merchant
     PaymentServiceProvider <-. Merchant_PaymentServiceProvider
     Merchant <-. User
@@ -43,6 +51,7 @@ package TransactionData {
         + id
         - type
         - creation_time
+        - transaction_id
         - merchant_id
         - data
         - ...
