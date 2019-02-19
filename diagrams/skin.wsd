@@ -9,6 +9,13 @@ skinparam ArrowColor #035C58
 skinparam ArrowFontColor #172935
 skinparam ArrowFontName Raleway
 skinparam BackgroundColor #F5FEFE
+skinparam ClassAttributeFontColor #172935
+skinparam ClassAttributeFontName Raleway
+skinparam ClassBackgroundColor #08E8DE
+skinparam ClassBorderColor #035C58
+skinparam ClassFontColor #172935
+skinparam ClassFontName Raleway
+skinparam ClassHeaderBackgroundColor #9DF6F2
 skinparam ControlBackgroundColor #08E8DE
 skinparam ControlBorderColor #035C58
 skinparam ControlFontColor #172935
@@ -19,6 +26,10 @@ skinparam EntityBackgroundColor #08E8DE
 skinparam EntityBorderColor #035C58
 skinparam EntityFontColor #172935
 skinparam EntityFontName Raleway
+skinparam PackageBackgroundColor #F5FEFE
+skinparam PackageBorderColor #035C58
+skinparam PackageFontColor #172935
+skinparam PackageFontName Raleway
 skinparam SequenceLifeLineBorderColor #035C58
 skinparam SequenceTitleFontColor #172935
 skinparam SequenceTitleFontName Raleway

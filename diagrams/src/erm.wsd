@@ -1,0 +1,63 @@
+@startuml erm
+
+!include ../skin.wsd
+
+package BaseData {
+
+    class User {
+        + id
+        - name
+        - password
+        - merchant_id
+        - email
+        - ...
+    }
+
+    class Merchant {
+        + id
+        - name
+        - ...
+    }
+
+    class Merchant_PaymentServiceProvider {
+        + mechant_id
+        + psp_id
+        - creditions
+        - ...
+    }
+
+    class PaymentServiceProvider {
+        + id
+        - name    
+        - ...
+    }
+
+    Merchant_PaymentServiceProvider .> Merchant
+    PaymentServiceProvider <-. Merchant_PaymentServiceProvider
+    Merchant <-. User
+}
+
+package TransactionData {
+
+    class Event {
+        + id
+        - type
+        - creation_time
+        - merchant_id
+        - data
+        - ...
+    }
+
+    class TransactionView {
+        + id
+        - ...
+    }
+
+    class OtherView {
+        + id
+        - ...
+    }
+}
+
+BaseData -[hidden]-> TransactionData
+@enduml
