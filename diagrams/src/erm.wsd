@@ -5,44 +5,49 @@
 package BaseData {
 
     class User {
-        + id
-        - name
-        - password
-        - merchant_id
-        - email
-        - ...
+        id
+        --
+        name
+        password
+        merchant_id
+        email
+        ...
     }
 
     class Merchant {
-        + id
-        - name
-        - ...
+        id
+        --
+        name
+        ...
     }
 
     class Merchant_PaymentServiceProvider {
-        + mechant_id
-        + psp_id
-        - data
-        - ...
+        mechant_id
+        psp_id
+        --
+        data
+        ...
     }
 
     class PaymentServiceProvider {
-        + id
-        - name    
-        - ...
+        id
+        --
+        name    
+        ...
     }
 
     class History {
-        + id
-        - table_name
-        - prim_key
-        - timestamp
-        - data
+        id
+        --
+        table_name
+        prim_key
+        timestamp
+        previous_data
     }
 
     class SdkToken {
-        + merchant_id
-        + Token
+        merchant_id
+        Token
     }
 
     Merchant_PaymentServiceProvider .> Merchant
@@ -54,23 +59,26 @@ package BaseData {
 package TransactionData {
 
     class Event {
-        + id
-        - type
-        - creation_time
-        - transaction_id
-        - merchant_id
-        - data
-        - ...
+        id
+        --
+        type
+        creation_time
+        transaction_id
+        merchant_id
+        data
+        ...
     }
 
     class TransactionView {
-        + id
-        - ...
+        id
+        --
+        ...
     }
 
     class OtherView {
-        + id
-        - ...
+        id
+        --
+        ...
     }
 }
 
