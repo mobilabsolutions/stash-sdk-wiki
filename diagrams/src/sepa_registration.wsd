@@ -4,7 +4,7 @@
 
 title Sepa Registration
 
-actor ""Customer / SDK"" as User
+actor "Customer / SDK" as User
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
