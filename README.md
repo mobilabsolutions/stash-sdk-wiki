@@ -17,6 +17,8 @@ Apart from information found in Wiki this repository will contain other document
 
 ![cc_transaction_3d](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/CC%20Transaction%203D%20Secure.png?token=ADzKSDNKOhYZsac068AcPemeqPQQ4nT2ks5cb84ewA%3D%3D)
 
+![apple_pay](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/apple_pay.png?token=ADzKSP7kJ0O8rFkQ33X3h971jSRIvTbmks5cdQMowA%3D%3D)
+
 ![refund](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Refund%20CC%20Transaction.png?token=ADzKSGmOyJw_xhNI9QnRzS26ofYBdY4Uks5cb841wA%3D%3D)
 
 ![chargeback](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Chargeback%20CC%20Transaction.png?token=ADzKSHj80V4pK7e1qjsSEu2cr6-Su7muks5cb85LwA%3D%3D)
@@ -36,3 +38,5 @@ Apart from information found in Wiki this repository will contain other document
 ![delete Alias](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Delete%20Payment%20Data.png?token=ADzKSIlH9ML_oLwkuvRbxIBbkOnmsn05ks5cc9HewA%3D%3D)
 
 ![report](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/Report.png?token=ADzKSGhEJMdW0bciiikPYodaI3aXmx9wks5cc8PmwA%3D%3D)
+
+![erm](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/erm.png?token=ADzKSPZJGOWZhi6XRS8vltNSNO7WFg4bks5cdQNbwA%3D%3D)
