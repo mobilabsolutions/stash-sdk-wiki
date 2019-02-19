@@ -13,11 +13,11 @@ User -> MBE: GetPSP(forSepa, MerchantId)
 MBE -> User: URL
 
 User -> PSP: IBAN, and Account Data
-PSP -> User: Token
+PSP -> User: Alias
 
-User -> MEC: Checkout (Token)
-MEC -> MBE: Auth(x€, "Reason", Token, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Token)
+User -> MEC: Checkout (Alias)
+MEC -> MBE: Auth(x€, "Reason", Alias, PurchaseId)
+MBE -> PSP: Auth(x€, "Reason", Alias)
 PSP -> MBE: Result
 MBE -> MEC: Result + TransactionId
 MEC -> User: Result

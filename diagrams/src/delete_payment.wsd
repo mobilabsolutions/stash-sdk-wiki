@@ -9,12 +9,10 @@ control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 entity "Mechant Backend" as MEC
 
-User -> MBE: PrepareDeletePayment(MerchantId)
-MBE -> User: URL
-
-User -> PSP: Delete Token
-PSP -> User: OK
-PSP -> MBE: Notifies
-MBE -> MEC: Notifies
+User -> MBE: DeleteAlias (Alias)
+MBE -> PSP: DeleteAlias
+PSP -> MBE: OK
+MBE -> User: OK
+MBE -> MEC: Notifies about delete
 
 @enduml

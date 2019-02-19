@@ -12,6 +12,6 @@ User -> MBE: GetPSP(forSepa, MerchantId)
 MBE -> User: URL
 
 User -> PSP: IBAN, and Account Data
-PSP -> User: Token
+PSP -> User: Alias
 
 @enduml

@@ -12,6 +12,6 @@ User -> MBE: GetPSP(forCC, MerchantId)
 MBE -> User: URL
 
 User -> PSP: CC Data
-PSP -> User: Token
+PSP -> User: Alias
 
 @enduml

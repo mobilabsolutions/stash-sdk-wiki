@@ -12,7 +12,7 @@ entity "Merchant Backend" as MEC
 
 User -> Merchant: Ask for Redund
 Merchant -> MBE: Initiates Refund (transactionId)
-MBE -> PSP: Process Refund (token, amount)
+MBE -> PSP: Process Refund (Alias, amount)
 PSP -> MBE: Confirms Refund
 MBE -> MEC: Notifies about Refund
 MBE -> Merchant: Confirms Refund

@@ -14,11 +14,11 @@ User -> MBE: GetPSP(forCC, MerchantId)
 MBE -> User: URL
 
 User -> PSP: CC Data
-PSP -> User: Token
+PSP -> User: Alias
 
-User -> MEC: Checkout (Token)
-MEC -> MBE: Auth(x€, "Reason", Token, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Token, MerchantId, TransactionId)
+User -> MEC: Checkout (Alias)
+MEC -> MBE: Auth(x€, "Reason", Alias, PurchaseId)
+MBE -> PSP: Auth(x€, "Reason", Alias, MerchantId, TransactionId)
 PSP -> Bank: Auth(x€, "Reason", CCData)
 Bank -> PSP: Need 3d Secure + URL
 PSP -> MBE: Need 3d Secure + URL
