@@ -20,6 +20,7 @@ PAB -> MBE: Call ConfirmURL
 MBE -> MEC: Confirm if all OK 
 PAB -> PAS: Response
 PAS -> User: Response
-User -> MEC: All Ok?
-MEC -> User: OK!
+User -> MBE: All Ok?
+MBE -> User: OK!
+
 @enduml

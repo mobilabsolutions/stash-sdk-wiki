@@ -2,6 +2,8 @@
 
 !include ../skin.wsd
 
+title ERM brainstorming
+
 package BaseData {
 
     class User {

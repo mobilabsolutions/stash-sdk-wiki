@@ -2,8 +2,10 @@
 
 !include ../skin.wsd
 
+title Node thinking brainstorming
+
 component AndroidSDK
-component IOSSDK
+component IosSDK
 component Dashboard
 
 package User {
@@ -30,7 +32,7 @@ package Adapter {
 Processor -> Agregator
 
 AndroidSDK .-> Processor
-IOSSDK .-> Processor
+IosSDK .-> Processor
 Processor .-> Paypal
 Processor .-> BSOne
 Processor .-> Klarna
