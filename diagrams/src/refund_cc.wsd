@@ -1,10 +1,10 @@
-@startuml
+@startuml refund_cc
 
 !include ../skin.wsd
 
 title Refund CC Transaction
 
-actor "User" as User
+actor "Customer" as User
 actor "Merchant" as Merchant
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP

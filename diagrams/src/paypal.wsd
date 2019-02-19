@@ -1,10 +1,10 @@
-@startuml
+@startuml paypal
 
 !include ../skin.wsd
 
 title Paypal Transaction
 
-actor "User / SDK" as User
+actor "Customer / SDK" as User
 entity "Paypal Sdk" as PAS
 entity "Paypal" as PAB
 control "MobiLab Backend" as MBE

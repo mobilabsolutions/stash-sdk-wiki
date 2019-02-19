@@ -1,4 +1,4 @@
-@startuml
+@startuml report
 
 !include ../skin.wsd
 

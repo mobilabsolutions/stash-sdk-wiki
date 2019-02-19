@@ -1,10 +1,10 @@
-@startuml
+@startuml klarna
 
 !include ../skin.wsd
 
 title Klarna
 
-actor "User / SDK" as User
+actor "Customer / SDK" as User
 entity "Karna Sdk" as PAS
 entity "Karna" as PAB
 control "MobiLab Backend" as MBE

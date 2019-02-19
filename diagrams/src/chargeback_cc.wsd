@@ -1,10 +1,10 @@
-@startuml
+@startuml chargeback_cc
 
 !include ../skin.wsd
 
 title Chargeback CC Transaction
 
-actor "User" as User
+actor "Customer" as User
 entity "Bank" as Bank
 entity "Payment Provider (PSP)" as PSP
 control "MobiLab Backend" as MBE

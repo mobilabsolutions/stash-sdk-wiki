@@ -1,10 +1,10 @@
-@startuml
+@startuml sepa_registration
 
 !include ../skin.wsd
 
 title Sepa Registration
 
-actor "User / SDK" as User
+actor ""Customer / SDK"" as User
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
