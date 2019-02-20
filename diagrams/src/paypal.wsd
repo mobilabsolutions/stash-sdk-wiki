@@ -5,7 +5,7 @@
 title Paypal Transaction
 
 actor "Customer / SDK" as User
-entity "Paypal Sdk" as PAS
+entity "Paypal SDK" as PAS
 entity "Paypal" as PAB
 control "MobiLab Backend" as MBE
 entity "Merchant Backend" as MEC
@@ -13,7 +13,7 @@ entity "Merchant Backend" as MEC
 User -> MEC: GetAmount / perpare checkout
 MEC -> User: Amount
 User -> MBE: GetPaypalConfirmUrl (Amount, MerchantId)
-MBE -> User: Url
+MBE -> User: URL
 User -> PAS: ConfirmURL, Amount
 PAS -> PAB: Authorize Amount
 PAB -> MBE: Call ConfirmURL
