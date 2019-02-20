@@ -55,4 +55,5 @@ Dashboard .-> MerchantInterface
 MerchantBackend .-> Agregator
 MerchantBackend .-> MerchantInterface
 
+Login -[hidden]right- UserApi
 @enduml
