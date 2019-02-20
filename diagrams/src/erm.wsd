@@ -42,7 +42,7 @@ package BaseData {
         ...
     }
 
-    class History {
+    class DataChangeLog {
         id
         --
         table_name
