@@ -8,9 +8,6 @@ actor "Customer / SDK" as User
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MBE: GetPSP(forCC, MerchantId)
-MBE -> User: URL
-
 User -> PSP: CC Data
 PSP -> User: Alias
 
