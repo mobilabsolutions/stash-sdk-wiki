@@ -7,20 +7,21 @@ title Node thinking brainstorming
 component AndroidSDK
 component IosSDK
 component Dashboard
-component "Merchant Backend" as MEC
+component MerchantBackend
 
 package User {
-  component Manager
   component Login
+  component DataInterface as UserApi
 }
 
 package BaseData {
-  component Controller
+  component DataInterface as BaseDateApi
 }
 
 package Transaction {
-  component Processor
+  component SdkInterface
   component Agregator
+  component MerchantInterface
 }
 
 package Adapter {
@@ -30,20 +31,28 @@ package Adapter {
   component Stripe
 }
 
-Processor -> Agregator
+SdkInterface -> Agregator
+Agregator <- MerchantInterface
 
-AndroidSDK .-> Processor
-IosSDK .-> Processor
-MEC .-> Processor
+AndroidSDK .-> SdkInterface
+IosSDK .-> SdkInterface
 
-Processor .-> Paypal
-Processor .-> BSOne
-Processor .-> Klarna
-Processor .-> Stripe
+SdkInterface .-> Paypal
+SdkInterface .-> BSOne
+SdkInterface .-> Klarna
+SdkInterface .-> Stripe
+
+MerchantInterface .-> Paypal
+MerchantInterface .-> BSOne
+MerchantInterface .-> Klarna
+MerchantInterface .-> Stripe
 
 Dashboard .-> Login
-Dashboard .-> Manager
-Dashboard .-> Controller
+Dashboard .-> UserApi
+Dashboard .-> BaseDateApi
 Dashboard .-> Agregator
+Dashboard .-> MerchantInterface
+MerchantBackend .-> Agregator
+MerchantBackend .-> MerchantInterface
 
 @enduml

@@ -55,6 +55,7 @@ package BaseData {
         token
         merchant_id
         --
+        type
         created_at
         expires
     }
