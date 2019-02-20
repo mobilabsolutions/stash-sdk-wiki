@@ -16,7 +16,7 @@ skinparam ClassBorderColor #035C58
 skinparam ClassFontColor #172935
 skinparam ClassFontName Raleway
 skinparam ClassHeaderBackgroundColor #9DF6F2
-skinparam ComponentBackgroundColor #08E8DE
+skinparam ComponentBackgroundColor #3AEDE5
 skinparam ComponentBorderColor #035C58
 skinparam ComponentFontColor #172935
 skinparam ComponentFontName Raleway
