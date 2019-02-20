@@ -1,4 +1,7 @@
 @startuml skin
+
+!define TABLE (T, #08E8DE)
+
 skinparam handwritten true
 skinparam sequenceMessageAlign center
 skinparam ActorBackgroundColor #08E8DE

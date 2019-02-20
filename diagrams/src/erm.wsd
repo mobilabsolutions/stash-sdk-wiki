@@ -6,7 +6,7 @@ title ERM brainstorming
 
 package BaseData {
 
-    class User {
+    class User << TABLE >> {
         id
         --
         name
@@ -17,7 +17,7 @@ package BaseData {
         ...
     }
 
-    class Merchant {
+    class Merchant << TABLE >>{
         id
         --
         name
@@ -25,7 +25,7 @@ package BaseData {
         ...
     }
 
-    class Merchant_PaymentServiceProvider {
+    class Merchant_PaymentServiceProvider << TABLE >>{
         mechant_id
         psp_id
         --
@@ -34,7 +34,7 @@ package BaseData {
         ...
     }
 
-    class PaymentServiceProvider {
+    class PaymentServiceProvider << TABLE >>{
         id
         --
         name    
@@ -42,7 +42,7 @@ package BaseData {
         ...
     }
 
-    class DataChangeLog {
+    class DataChangeLog << TABLE >>{
         id
         --
         table_name
@@ -51,7 +51,7 @@ package BaseData {
         previous_data
     }
 
-    class SdkToken {
+    class SdkToken << TABLE >>{
         token
         merchant_id
         --
@@ -68,7 +68,7 @@ package BaseData {
 
 package TransactionData {
 
-    class Event {
+    class Event << TABLE >>{
         id
         --
         type
@@ -79,19 +79,19 @@ package TransactionData {
         ...
     }
 
-    class TransactionView {
+    class TransactionView << TABLE >>{
         transaction_id
         --
         ...
     }
 
-    class MerchantBallance {
+    class MerchantBallance << TABLE >>{
         merchant_id
         --
         ...
     }
 
-    class OtherView {
+    class OtherView << TABLE >>{
         id
         --
         ...
