@@ -9,14 +9,13 @@ entity "Merchant Backend" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MBE: GetPSP(forSepa, MerchantId)
-MBE -> User: URL
-
 User -> PSP: IBAN, and Account Data
 PSP -> User: Alias
 
 User -> MBE: Alias
-MBE -> User: JWT (Wrapped Alias)
+MBE -> PSP: GetMandat
+PSP -> MBE: Mandat
+MBE -> User: JWT (Wrapped Alias, Mandat)
 
 User -> MEC: Checkout (JWT)
 MEC -> MBE: Auth(x€, "Reason", JWT, PurchaseId)
