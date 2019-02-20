@@ -80,7 +80,13 @@ package TransactionData {
     }
 
     class TransactionView {
-        id
+        transaction_id
+        --
+        ...
+    }
+
+    class MerchantBallance {
+        merchant_id
         --
         ...
     }
