@@ -5,7 +5,7 @@
 title Klarna
 
 actor "Customer / SDK" as User
-entity "Klarna Sdk" as PAS
+entity "Klarna SDK" as PAS
 entity "Klarna" as PAB
 control "MobiLab Backend" as MBE
 entity "Merchant Backend" as MEC
