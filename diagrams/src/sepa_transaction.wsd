@@ -20,7 +20,7 @@ MBE -> User: JWT (Wrapped Alias)
 
 User -> MEC: Checkout (JWT)
 MEC -> MBE: Auth(x€, "Reason", JWT, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", JWT)
+MBE -> PSP: Auth(x€, "Reason", Alias)
 PSP -> MBE: Result
 MBE -> MEC: Result + TransactionId
 MEC -> User: Result
