@@ -9,9 +9,9 @@ entity "Merchant Backend" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MEC: Checkout (Alias)
-MEC -> MBE: Auth(x€, "Reason", Alias, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Alias)
+User -> MEC: Checkout (JWT)
+MEC -> MBE: Auth(x€, "Reason", JWT, PurchaseId)
+MBE -> PSP: Auth(x€, "Reason", JWT)
 PSP -> MBE: Result
 MBE -> MEC: Result + TransactionId
 MEC -> User: Result

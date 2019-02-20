@@ -15,9 +15,12 @@ MBE -> User: URL
 User -> PSP: CC Data
 PSP -> User: Alias
 
-User -> MEC: Checkout (Alias)
-MEC -> MBE: Auth(x€, "Reason", Alias, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Alias)
+User -> MBE: Alias
+MBE -> User: JWT (Wrapped Alias)
+
+User -> MEC: Checkout (JWT)
+MEC -> MBE: Auth(x€, "Reason", JWT, PurchaseId)
+MBE -> PSP: Auth(x€, "Reason", JWT)
 PSP -> MBE: Result
 MBE -> MEC: Result + TransactionId
 MEC -> User: Result

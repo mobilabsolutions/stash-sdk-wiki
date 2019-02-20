@@ -16,9 +16,12 @@ MBE -> User: URL
 User -> PSP: CC Data
 PSP -> User: Alias
 
-User -> MEC: Checkout (Alias)
-MEC -> MBE: Auth(x€, "Reason", Alias, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Alias, MerchantId, TransactionId)
+User -> MBE: Alias
+MBE -> User: JWT (Wrapped Alias)
+
+User -> MEC: Checkout (JWT)
+MEC -> MBE: Auth(x€, "Reason", JWT, PurchaseId)
+MBE -> PSP: Auth(x€, "Reason", JWT, MerchantId, TransactionId)
 PSP -> Bank: Auth(x€, "Reason", CCData)
 Bank -> PSP: Need 3d Secure + URL
 PSP -> MBE: Need 3d Secure + URL

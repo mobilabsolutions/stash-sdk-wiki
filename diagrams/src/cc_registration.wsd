@@ -14,4 +14,7 @@ MBE -> User: URL
 User -> PSP: CC Data
 PSP -> User: Alias
 
+User -> MBE: Alias
+MBE -> User: JWT (Wrapped Alias)
+
 @enduml
