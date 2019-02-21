@@ -9,6 +9,8 @@ entity "Merchant Backend" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
+User -> MBE: Prepare Registration
+MBE -> User: URL 
 User -> PSP: IBAN, and Account Data
 PSP -> User: Alias
 

@@ -10,6 +10,9 @@ control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 entity "Bank" 
 
+User -> MBE: Prepare Registration
+MBE -> User: URL 
+
 User -> PSP: CC Data
 PSP -> User: Alias
 
