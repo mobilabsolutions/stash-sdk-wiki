@@ -69,11 +69,11 @@ package BaseData {
 package TransactionData {
 
     class Event << TABLE >>{
-        id
+        transaction_id
+        running_no
         --
         type
         creation_time
-        transaction_id
         merchant_id
         data
         ...
@@ -82,12 +82,26 @@ package TransactionData {
     class TransactionView << TABLE >>{
         transaction_id
         --
+        status
+        merchant_id
+        amount
+        ballance
+        currency_id
+        reason
+        created_at
+        last_modified_at
+        authorized_at
+        refunded_at
+        country_id
+        last_running_no
         ...
     }
 
     class MerchantBallance << TABLE >>{
         merchant_id
         --
+        currency_id
+        ballance
         ...
     }
 
@@ -97,5 +111,8 @@ package TransactionData {
         ...
     }
 }
+
+BaseData -[hidden]- TransactionData
+
 
 @enduml
