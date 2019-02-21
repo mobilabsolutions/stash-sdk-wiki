@@ -30,8 +30,6 @@ What Keycloak is NOT providing is any kind of Private / Public Key authorization
 
 would be to implement these functions our own, because we just need a very limited amount of the functions Keycloak is providing.
 
-## Opinion
+## Conclusion
 
-All other Dashboard functionalities are independent of if we use Keycloak or not.
-
-I (Christoph) personally tend to the other Option, but it is only an opinion. We could change it later to the one or other direction. I guess the effort is about the same.
+for the MVP we go with keycloak and use the Keycloak UI with only ONE user each Merchant.
