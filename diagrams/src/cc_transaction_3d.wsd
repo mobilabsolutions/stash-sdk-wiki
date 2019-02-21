@@ -11,7 +11,7 @@ entity "Payment Provider (PSP)" as PSP
 entity "Bank" 
 
 User -> MBE: Prepare Registration
-MBE -> User: URL 
+MBE -> User: JWT Wrapped URL and Id 
 
 User -> PSP: CC Data
 PSP -> User: Alias
