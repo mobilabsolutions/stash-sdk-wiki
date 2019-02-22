@@ -10,15 +10,22 @@ entity "Paypal" as PAB
 control "MobiLab Backend" as MBE
 entity "Merchant Backend" as MEC
 
-User -> MBE: Prepare (Amount, MerchantId)
-MBE -> User: Url + ...
-User -> PAS: Init (ConfirmURL, Amount)
-PAS -> PAB: Authorize Amount
-PAB -> MBE: Call ConfirmURL
-MBE -> MEC: Confirm if all OK 
+User -> MBE: Prepare (Cart, MerchantId)
+MBE -> PAB: SetupPayment
+PAB -> MBE: Payment Token
+MBE -> User: Payment Token
+User -> PAS: Init (Payment Token)
+PAS -> PAB: Confirm
 PAB -> PAS: Response
 PAS -> User: Response
-User -> MBE: All Ok?
+User -> MBE: Finish Transaction
+MBE -> PAB: Check Transaction
+PAB -> MBE: OK
+
 MBE -> User: OK!
+
+MBE -> MEC: Confirm if all OK 
+
+PAB -> MBE: Call Portal ConfirmURL (anytime)
 
 @enduml
