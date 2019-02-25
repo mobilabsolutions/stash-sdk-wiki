@@ -4,24 +4,47 @@
 
 - POST /alias  
   Creates Alias:
-  input -> Alias (JWT)
+  input -> Alias  
+  Header: publishable key
 
 - PUT /alias/{id}  
-  Exchange Alias: Alias -> Alias
+  Exchange Alias: Alias -> Alias  
+  Header: publishable key
 
 ## transaction (Merchant Backend / Dashboard)
 
 - POST /transaction  
-  Charge: Alias -> Transaction
+  Header: secret key  
+  Charge:  
+  {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
+  -> {id, amount, currency, status, action}
 
 - POST /transaction/{id}/refund  
-  Refund: Id -> Refund
+  Header: secret key  
+  Refund:  
+  { reason }  
+  -> {id, amount, currency, status, action}
 
 - POST /authorization  
-  Authorize (just cc): Alias -> Authorization
+  Header: secret key  
+  Authorize (just cc):  
+  {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
+  -> {id, amount, currency, status, action}
 
 - POST /authorization/{id}/reverse  
-  Reverse: Authorization -> Reversal
+  Header: secret key  
+  Reverse:  
+  {reason}  
+  -> {id, amount, currency, status, action}
 
 - POST /authorization/{id}/capture  
-  Capture: Authorization -> Transaction
+  Header: secret key  
+  Capture:  
+  {}  
+  -> {id, amount, currency, status, action}
+
+- DELETE /alias/{id}  
+  Header: secret key
+  Delete Alias:  
+  null  
+  -> { status }

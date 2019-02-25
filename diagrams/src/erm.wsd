@@ -94,7 +94,7 @@ package TransactionData {
         merchant_id: int
         reason: string
         alias_id: string
-        type: AUTH,REVERSAL,REFUND,CAPTURE
+        action: AUTH,REVERSAL,REFUND,CAPTURE
         status: SUCESS,FAIL
         paymentmethode_id: string(3)
         paymentinfo: JSON
