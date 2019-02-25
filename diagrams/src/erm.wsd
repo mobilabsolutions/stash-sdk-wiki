@@ -8,7 +8,7 @@ package BaseData {
     class psp << TABLE >>{
         id: string(3)
         --
-        name: string(10)
+        name: string
     }
 
     class paymentmethode << TABLE >>{
@@ -97,6 +97,7 @@ package TransactionData {
         type: AUTH,REVERSAL,REFUND,CAPTURE
         status: SUCESS,FAIL
         paymentmethode_id: string(3)
+        paymentinfo: JSON
         merchant_transaction_id: string
         merchant_customer_id: string
         created_at: Timestamp
