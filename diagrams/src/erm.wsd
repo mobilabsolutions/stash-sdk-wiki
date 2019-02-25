@@ -31,7 +31,7 @@ package BaseData {
         --
         name: string 
         email: string
-        default_currency_id
+        default_currency_id: string(3)
         ...
     }
 
@@ -45,13 +45,13 @@ package BaseData {
 
     class merchant_psp << TABLE >>{
         mechant_id: int
-        psp_id: string
+        psp_id: string(3)
         --
         data: JSON
     }
 
     class merchant_user << TABLE >>{
-        id: string
+        id: int
         --
         username: string
         password: string
