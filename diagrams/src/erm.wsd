@@ -15,7 +15,7 @@ package BaseData {
     class paymentmethode << TABLE >>{
         id: string(3)
         --
-        name: string(10)
+        name: string
         ...
     }
 
@@ -74,7 +74,7 @@ package TransactionData {
         psp_alias: string
         extra: JSON
         merchant_id: int
-        paymentmethode: string(3)
+        paymentmethode_id: string(3)
     }
 
     class transaction_record << TABLE >>{
@@ -87,7 +87,7 @@ package TransactionData {
         alias_id: int
         type: AUTH,REVERSAL,REFUND,CAPTURE
         status: SUCESS,FAIL
-        paymentmethode: string(3)
+        paymentmethode_id: string(3)
         merchant_transaction_id: string
         merchant_customer_id: string
     }
