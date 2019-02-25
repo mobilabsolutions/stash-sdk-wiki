@@ -80,7 +80,7 @@ package TransactionData {
     class transaction_record << TABLE >>{
         id: int
         --
-        transaction_id: int
+        transaction_id: string
         amount: decimal
         merchant_id: int
         reason: string
