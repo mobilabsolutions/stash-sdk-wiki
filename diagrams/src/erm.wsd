@@ -59,10 +59,10 @@ package BaseData {
         locale: string
     }
 
-    merchant <. merchant_api_key 
     merchant_psp .> merchant
-    psp <. merchant_psp
-    merchant <-. merchant_user
+    psp <-. merchant_psp 
+    merchant_api_key .-> merchant 
+    merchant <. merchant_user 
     psp_paymentmethode .-> paymentmethode
     psp_paymentmethode .> psp
 }
@@ -74,6 +74,7 @@ package TransactionData {
         psp_alias: string
         extra: JSON
         merchant_id: int
+        psp_id: string(3)
         paymentmethode_id: string(3)
     }
 
@@ -96,6 +97,8 @@ package TransactionData {
 }
 
 paymentmethode <.- alias
+merchant <.- alias
 paymentmethode <.- transaction_record
+merchant <.- transaction_record
 
 @enduml
