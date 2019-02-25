@@ -9,21 +9,18 @@ package BaseData {
         id: string(3)
         --
         name: string(10)
-        ...
     }
 
     class paymentmethode << TABLE >>{
         id: string(3)
         --
         name: string
-        ...
     }
 
     class psp_paymentmethode << TABLE >>{
         psp_id: string(3)
         paymentmethode_id: string(3)
         --
-        ...
     }
 
     class merchant << TABLE >>{
@@ -32,6 +29,8 @@ package BaseData {
         name: string 
         email: string
         default_currency_id: string(3)
+        created_at: Timestamp
+        last_changed_at: Timestamp
         ...
     }
 
@@ -41,6 +40,7 @@ package BaseData {
         --
         is_active: bool
         keytype: string
+        created_at: Timestamp
     }
 
     class merchant_psp << TABLE >>{
@@ -48,6 +48,8 @@ package BaseData {
         psp_id: string(3)
         --
         data: JSON
+        created_at: Timestamp
+        last_changed_at: Timestamp
     }
 
     class merchant_user << TABLE >>{
@@ -57,6 +59,8 @@ package BaseData {
         password: string
         merchant_id: string
         locale: string
+        created_at: Timestamp
+        last_changed_at: Timestamp
     }
 
     merchant_psp .> merchant
@@ -69,13 +73,16 @@ package BaseData {
 
 package TransactionData {
     class alias << TABLE >>{
-        id: int
+        id: string
         --
         psp_alias: string
         extra: JSON
         merchant_id: int
         psp_id: string(3)
         paymentmethode_id: string(3)
+        activat: bool
+        created_at: Timestamp
+        last_changed_at: Timestamp
     }
 
     class transaction_record << TABLE >>{
@@ -85,12 +92,13 @@ package TransactionData {
         amount: decimal
         merchant_id: int
         reason: string
-        alias_id: int
+        alias_id: string
         type: AUTH,REVERSAL,REFUND,CAPTURE
         status: SUCESS,FAIL
         paymentmethode_id: string(3)
         merchant_transaction_id: string
         merchant_customer_id: string
+        created_at: Timestamp
     }
 
     alias <. transaction_record
