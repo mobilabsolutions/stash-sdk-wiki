@@ -89,6 +89,7 @@ package TransactionData {
         id: int
         --
         transaction_id: string
+        currency_id: string(3)
         amount: decimal
         merchant_id: int
         reason: string
