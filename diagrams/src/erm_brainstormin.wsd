@@ -1,0 +1,118 @@
+@startuml erm_brainstormin
+
+!include ../skin.wsd
+
+title ERM brainstorming
+
+package BaseData {
+
+    class User << TABLE >> {
+        id
+        --
+        name
+        password
+        merchant_id
+        email
+        created_at
+        ...
+    }
+
+    class Merchant << TABLE >>{
+        id
+        --
+        name
+        created_at
+        ...
+    }
+
+    class Merchant_PaymentServiceProvider << TABLE >>{
+        mechant_id
+        psp_id
+        --
+        data
+        created_at
+        ...
+    }
+
+    class PaymentServiceProvider << TABLE >>{
+        id
+        --
+        name    
+        created_at
+        ...
+    }
+
+    class DataChangeLog << TABLE >>{
+        id
+        --
+        table_name
+        prim_key
+        timestamp
+        previous_data
+    }
+
+    class SdkToken << TABLE >>{
+        token
+        merchant_id
+        --
+        type
+        created_at
+        expires
+    }
+
+    Merchant_PaymentServiceProvider .> Merchant
+    PaymentServiceProvider <-. Merchant_PaymentServiceProvider
+    Merchant <-. User
+    Merchant <-. SdkToken
+}
+
+package TransactionData {
+
+    class Event << TABLE >>{
+        transaction_id
+        running_no
+        --
+        type
+        creation_time
+        merchant_id
+        data
+        ...
+    }
+
+    class TransactionView << TABLE >>{
+        transaction_id
+        --
+        status
+        merchant_id
+        amount
+        ballance
+        currency_id
+        reason
+        created_at
+        last_modified_at
+        authorized_at
+        refunded_at
+        country_id
+        last_running_no
+        ...
+    }
+
+    class MerchantBallance << TABLE >>{
+        merchant_id
+        --
+        currency_id
+        ballance
+        ...
+    }
+
+    class OtherView << TABLE >>{
+        id
+        --
+        ...
+    }
+}
+
+BaseData -[hidden]- TransactionData
+
+
+@enduml

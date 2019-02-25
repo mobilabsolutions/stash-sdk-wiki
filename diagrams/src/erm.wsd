@@ -2,117 +2,47 @@
 
 !include ../skin.wsd
 
-title ERM brainstorming
+title ERM
 
 package BaseData {
-
-    class User << TABLE >> {
-        id
+    class psp << TABLE >>{
+        id: string(3)
         --
-        name
-        password
-        merchant_id
-        email
-        created_at
+        name: string(10)
+        payment_type: JSON
         ...
     }
 
-    class Merchant << TABLE >>{
-        id
+    class merchant << TABLE >>{
+        id: int
         --
-        name
-        created_at
+        name: string 
+        email: string
+        default_currency_id
         ...
     }
 
-    class Merchant_PaymentServiceProvider << TABLE >>{
-        mechant_id
-        psp_id
+    class merchant_api_key << TABLE >>{
+        mechant_id: int
+        secret_key: string
         --
-        data
-        created_at
-        ...
+        is_active: bool
+        keytype: string
     }
 
-    class PaymentServiceProvider << TABLE >>{
-        id
+    class merchant_psp << TABLE >>{
+        mechant_id: int
+        psp_id: string
         --
-        name    
-        created_at
-        ...
+        data: JSON
     }
 
-    class DataChangeLog << TABLE >>{
-        id
-        --
-        table_name
-        prim_key
-        timestamp
-        previous_data
-    }
 
-    class SdkToken << TABLE >>{
-        token
-        merchant_id
-        --
-        type
-        created_at
-        expires
-    }
+    merchant <. merchant_api_key 
+    merchant_psp .> merchant
+    psp <. merchant_psp
 
-    Merchant_PaymentServiceProvider .> Merchant
-    PaymentServiceProvider <-. Merchant_PaymentServiceProvider
-    Merchant <-. User
-    Merchant <-. SdkToken
 }
-
-package TransactionData {
-
-    class Event << TABLE >>{
-        transaction_id
-        running_no
-        --
-        type
-        creation_time
-        merchant_id
-        data
-        ...
-    }
-
-    class TransactionView << TABLE >>{
-        transaction_id
-        --
-        status
-        merchant_id
-        amount
-        ballance
-        currency_id
-        reason
-        created_at
-        last_modified_at
-        authorized_at
-        refunded_at
-        country_id
-        last_running_no
-        ...
-    }
-
-    class MerchantBallance << TABLE >>{
-        merchant_id
-        --
-        currency_id
-        ballance
-        ...
-    }
-
-    class OtherView << TABLE >>{
-        id
-        --
-        ...
-    }
-}
-
-BaseData -[hidden]- TransactionData
 
 
 @enduml
