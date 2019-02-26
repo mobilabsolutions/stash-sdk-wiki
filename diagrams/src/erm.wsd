@@ -67,11 +67,11 @@ package BaseData {
     }
 
     merchant_psp .-> merchant
-    psp <. merchant_psp 
+    merchant_psp .-> psp  
     merchant_api_key .-> merchant 
     merchant <. merchant_user 
     psp_paymentmethode .-> paymentmethode
-    psp .> psp_paymentmethode
+    psp <. psp_paymentmethode
 }
 
 package TransactionData {
