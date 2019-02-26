@@ -9,13 +9,13 @@ Apart from information found in Wiki this repository will contain other document
 
 ## API
 
-[Description](https://github.com/mobilabsolutions/payment-sdk-wiki-open/blob/master/API.md)
+[Api Description](https://github.com/mobilabsolutions/payment-sdk-wiki-open/blob/master/API.md)
 
 ## Database
 
 ![erm](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/erm.png?token=ADzKSN7dERyJxUIgzJDQ_-YwEALvR-fxks5cfmw9wA%3D%3D)
 
-## Diagrams
+## Sequence Diagrams
 
 ![cc_registration](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_registration.png?token=ADzKSKNzo-NBlVIDjx1HlEtpo13zVNZvks5cdVkQwA%3D%3D)
 
