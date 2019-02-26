@@ -16,7 +16,7 @@ MBE -> User: { AliasId, Url}
 User -> PSP: Register { IBAN, AccountData }
 PSP -> User: PspAlias
 
-User -> MBE: Update Alias { PspAlias, AliasId }
+User -> MBE: Update Alias { PspAlias, AliasId, ibanMask }
 MBE -> PSP: GetMandat { PspAlias }
 PSP -> MBE: { Mandat }
 MBE -> User: { AliasId, Mandat }

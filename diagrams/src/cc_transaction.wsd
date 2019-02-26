@@ -16,7 +16,7 @@ MBE -> User: { AliasId, Url}
 User -> PSP: Register { CreditCard Data }
 PSP -> User: PspAlias
 
-User -> MBE: Update Alias { PspAlias, AliasId }
+User -> MBE: Update Alias { PspAlias, AliasId, ccMask, ccExp, ccType }
 MBE -> User: { AliasId }
 
 ... Payment ...

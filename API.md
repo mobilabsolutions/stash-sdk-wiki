@@ -111,9 +111,9 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 
 - GET /api/v1/transactions/{transactionId}  
   Header: Keycloak JWT Token  
-  -> 200 { transactionId, pspId, paymentMethod, ccMask, ccExpiryDate, ccType, initialReason, currencyId, balance, merchantPurchaseId, merchantCustomerId, createdAt, refundedAt, chargebackAt, status, events: [ { action, status, amount, currency, reason, createdAt }] } | 401 | 403 | 404
+  -> 200 { transactionId, pspId, paymentMethod, ccMask, ccExpiryDate, ccType, ibanMask, initialReason, currencyId, balance, merchantPurchaseId, merchantCustomerId, createdAt, refundedAt, chargebackAt, status, events: [ { action, status, amount, currency, reason, createdAt }] } | 401 | 403 | 404
 
 - GET /api/v1/transactions  
   Header: Keycloak JWT Token  
-  Query: { pspId, paymentMethod, ccMask, ccExpiryDate, ccExpiryDateStart, ccExpiryDateEnd, ccType, initialReason, currencyId, balanceStart, balanceEnd, merchantPurchaseId, merchantCustomerId, createdAtStart, createdAtEnd, status, refundedAtStart, refundedAtEnd, chargebackAtStart, chargebackAtEnd, hasEvent, hasNotEvent, offset, pageSize }  
+  Query: { pspId, paymentMethod, ccMask, ccExpiryDate, ccExpiryDateStart, ccExpiryDateEnd, ccType, ibanMask, initialReason, currencyId, balanceStart, balanceEnd, merchantPurchaseId, merchantCustomerId, createdAtStart, createdAtEnd, status, refundedAtStart, refundedAtEnd, chargebackAtStart, chargebackAtEnd, hasEvent, hasNotEvent, offset, pageSize }  
   -> 200 { count, offset, pageSize, data: [ { ...TransactionDetail } ]}
