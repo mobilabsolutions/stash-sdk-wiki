@@ -35,19 +35,19 @@
   -> 200 | 201 {id, amount, currency, status, action} | 400 | 401
 
 - PUT /api/v1/authorization/{id}/reverse  
-  Header: secret key | Keycloak JWT Token
+  Header: secret key | Keycloak JWT Token  
   Reverse:  
   {reason}  
   -> 200 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - PUT /api/v1/authorization/{id}/capture  
-  Header: secret key | Keycloak JWT Token
+  Header: secret key | Keycloak JWT Token  
   Capture:  
   null  
   -> 200 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - DELETE /api/v1/alias/{id}  
-  Header: secret key | Keycloak JWT Token
+  Header: secret key | Keycloak JWT Token  
   Delete Alias:  
   null  
   -> 204 | 401 | 404
