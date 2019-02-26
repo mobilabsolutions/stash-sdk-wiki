@@ -19,9 +19,9 @@ Engine will be Postgres, in Production GCP hosted
 
 ## Sequence Diagrams
 
-![cc_registration](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_registration.png?token=ADzKSKNzo-NBlVIDjx1HlEtpo13zVNZvks5cdVkQwA%3D%3D)
+![cc_registration](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_registration.png?token=ADzKSBEKp12Ex1WGQibsQTuJff6bPsOoks5cfp3uwA%3D%3D)
 
-![cc_payment_registered](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_payment_registered.png?token=ADzKSDa1_MjpbwbaiSY-HZW8375bYMlFks5cdVk2wA%3D%3D)
+![cc_payment_registered](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_payment_registered.png?token=ADzKSAPNtN07O-TpkXPpRD7JFfrvtGNlks5cfp4QwA%3D%3D)
 
 ![cc_transaction](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_transaction.png?token=ADzKSFi93Ju-XS6kGaEFB935BhDGVp6gks5cdVlXwA%3D%3D)
 
