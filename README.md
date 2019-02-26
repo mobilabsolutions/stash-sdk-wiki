@@ -7,6 +7,14 @@ Apart from information found in Wiki this repository will contain other document
 
 - [**Wiki**](https://github.com/mobilabsolutions/payment-sdk-wiki-open/wiki) - All documentation related to processes and organisation of the projects as well as documentation that is common to Mobile/Backend/Web
 
+## API
+
+[Description](https://github.com/mobilabsolutions/payment-sdk-wiki-open/blob/master/API.md)
+
+## Database
+
+![erm](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/erm.png?token=ADzKSN7dERyJxUIgzJDQ_-YwEALvR-fxks5cfmw9wA%3D%3D)
+
 ## Diagrams
 
 ![cc_registration](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_registration.png?token=ADzKSKNzo-NBlVIDjx1HlEtpo13zVNZvks5cdVkQwA%3D%3D)
@@ -39,6 +47,6 @@ Apart from information found in Wiki this repository will contain other document
 
 ![report](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/report.png?token=ADzKSE9GS7elv2UC9NQRigLbzl7TKTphks5cdVqfwA%3D%3D)
 
-![erm](https://github.com/mobilabsolutions/payment-sdk-wiki-open/blob/master/diagrams/out/erm.png)
+# Architecture
 
 ![backend](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/backend.png?token=ADzKSHlTERcuK3a6BZbeUP-D77YIN56Pks5cdVrKwA%3D%3D)
