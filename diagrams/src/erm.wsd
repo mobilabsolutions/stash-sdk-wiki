@@ -66,12 +66,12 @@ package BaseData {
         last_changed_at: Timestamp
     }
 
-    merchant_psp .> merchant
-    psp <-. merchant_psp 
+    merchant_psp .-> merchant
+    psp <. merchant_psp 
     merchant_api_key .-> merchant 
     merchant <. merchant_user 
     psp_paymentmethode .-> paymentmethode
-    psp_paymentmethode .> psp
+    psp .> psp_paymentmethode
 }
 
 package TransactionData {
@@ -112,6 +112,7 @@ package TransactionData {
 
 paymentmethode <.- alias
 merchant <.- alias
+psp <.- alias
 paymentmethode <.- transaction_record
 merchant <.- transaction_record
 
