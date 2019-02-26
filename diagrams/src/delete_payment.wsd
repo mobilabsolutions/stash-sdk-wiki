@@ -9,10 +9,10 @@ control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 entity "Mechant Backend" as MEC
 
-User -> MBE: Delete Payment (JWT)
-MBE -> PSP: Delete Payment (Alias)
-PSP -> MBE: OK
-MBE -> User: OK
-MBE -> MEC: Notifies about delete
+User -> MBE: Delete Alias { Alias Id}
+MBE -> PSP: Delete Payment { PspAlias }
+PSP -> MBE: { done }
+MBE -> User: { done }
+MBE -> MEC: Notify { AliasId, Purchases: [] }
 
 @enduml

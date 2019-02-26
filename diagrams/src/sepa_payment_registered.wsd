@@ -9,14 +9,15 @@ entity "Merchant Backend" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MEC: Checkout (JWT)
-MEC -> MBE: Auth(x€, "Reason", JWT, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Alias)
-PSP -> MBE: Result
-MBE -> MEC: Result + TransactionId
-MEC -> User: Result
+User -> MEC: Checkout { AliasId }
+MEC -> MBE: Authorize { AliasId, x€, Reason, IdempotentKey }
+MBE -> PSP: Authorize { PspAlias, x€, Reason }
+PSP -> MBE: { Status, PspTransactionId }
+MBE -> MEC: { Status, TransactionId }
+MEC -> User: { Status, TransactionId }
 
-PSP -> MBE: Confirmation Payment (up to one 1 business day later)
-MBE -> MEC: Confirmation Payment (PuchaseId, TransactionId)
+... up to one 1 business day later ...
+PSP -> MBE: Confirmation Payment { PspTransaction }
+MBE -> MEC: Confirmation Payment { PuchaseId, TransactionId }
 
 @enduml

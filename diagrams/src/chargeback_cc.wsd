@@ -11,9 +11,9 @@ control "MobiLab Backend" as MBE
 entity "Merchant Backend" as MEC
 
 User -> Bank: Wants Chargeback
-Bank -> PSP: Informs about Chargeback
-PSP -> MBE: Informs about Chargeback
-MBE -> MEC: Informs about Chargeback
+Bank -> PSP: Notifies { Chargeback, CCData, ... }
+PSP -> MBE: Notifies { Chargeback, PspAlias, PspTransaction, ... }
+MBE -> MEC: Notifies { Chargeback, PurchaseId, TransactionId, ... }
 MEC -> User: Deactivate Account
 
 @enduml

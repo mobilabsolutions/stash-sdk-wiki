@@ -9,13 +9,14 @@ entity "Merchant Backend" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MEC: Checkout (Token (Pay Token))
-MEC -> MBE: Authorize(x€, "Reason", Token, PurchaseId)
-MBE -> PSP: Authorize(x€, "Reason", Token)
-PSP -> MBE: Result
-MBE -> MEC: Result + TransactionId
-MEC -> User: Result
+User -> MEC: Checkout { ApplePayToken, Data }
+MEC -> MBE: Authorize { ApplePayToken, x€, "Reason", ... }
+MBE -> PSP: Authorize { ApplePayToken, x€, "Reason" }
+PSP -> MBE: { Status, PspTransactionId }
+MBE -> MEC: { Status, TransactionId }
+MEC -> User: { Status, TransactionId }
 
-MBE -> PSP: Capture Payment (after 20 min)
+... 20 min later ...
+MBE -> PSP: Capture { PspTransactionId }
 
 @enduml

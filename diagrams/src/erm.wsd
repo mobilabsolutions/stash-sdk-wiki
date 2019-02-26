@@ -24,7 +24,7 @@ package BaseData {
     }
 
     class merchant << TABLE >>{
-        id: int
+        id: string
         --
         name: string 
         email: string
@@ -36,9 +36,9 @@ package BaseData {
 
     class merchant_api_key << TABLE >>{
         id: int
-        mechant_id: int
-        secret_key: string
         --
+        mechant_id: string
+        secret_key: string
         is_active: bool
         keytype: string
         name: string
@@ -46,7 +46,7 @@ package BaseData {
     }
 
     class merchant_psp << TABLE >>{
-        mechant_id: int
+        mechant_id: string
         psp_id: string(3)
         --
         data: JSON
@@ -79,7 +79,7 @@ package TransactionData {
         --
         psp_alias: string
         extra: JSON
-        merchant_id: int
+        merchant_id: string
         psp_id: string(3)
         paymentmethode_id: string(3)
         activat: bool
@@ -94,7 +94,7 @@ package TransactionData {
         idempotent_key: string
         currency_id: string(3)
         amount: decimal
-        merchant_id: int
+        merchant_id: string
         reason: string
         alias_id: string
         action: AUTH,REVERSAL,REFUND,CAPTURE

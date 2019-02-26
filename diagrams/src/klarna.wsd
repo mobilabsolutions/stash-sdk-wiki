@@ -10,15 +10,22 @@ entity "Klarna" as PAB
 control "MobiLab Backend" as MBE
 entity "Merchant Backend" as MEC
 
-User -> MBE: Prepare (Amount, MerchantId)
-MBE -> User: Url + ...
-User -> PAS: Init (ConfirmURL, Amount)
-PAS -> PAB: Authorize Amount
-PAB -> MBE: Call ConfirmURL
-MBE -> MEC: Confirm if all OK 
-PAB -> PAS: Response
-PAS -> User: Response
-User -> MBE: All Ok?
-MBE -> User: OK!
+User -> MBE: Create Alias { Cart }
+MBE -> PAB: SetupPayment { Cart }
+PAB -> MBE: { KlarnaPayToken }
+MBE -> User: { KlarnaPayToken, AliasId, TransactionId }
+User -> PAS: Init (KlarnaPayToken)
+PAS -> PAB: Confirm { ... }
+PAB -> PAS: { Status }
+PAS -> User: { Status }
+User -> MBE: FinishTransaction { AliasId, TransactionId }
+MBE -> PAB: CheckTransaction { KlarnaPayToken }
+PAB -> MBE: { Status }
+
+MBE -> User: { Status }
+
+... async ...
+MBE -> MEC: Notify { TransactionId, PurchanseId } 
+PAB -> MBE: Notify { KlarnaPayToken, ...}
 
 @enduml

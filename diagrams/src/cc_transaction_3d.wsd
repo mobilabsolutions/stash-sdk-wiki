@@ -10,34 +10,34 @@ control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 entity "Bank" 
 
-User -> MBE: Prepare Registration
-MBE -> User: JWT Wrapped URL and Id 
+... Register ...
+User -> MBE: Create Alias
+MBE -> User: { AliasId, Url} 
 
-User -> PSP: CC Data
-PSP -> User: Alias
+User -> PSP: Register { CreditCard Data }
+PSP -> User: PspAlias
 
-User -> MBE: Alias
-MBE -> User: JWT (Wrapped Alias)
+User -> MBE: Update Alias { PspAlias, AliasId }
+MBE -> User: { AliasId }
 
-User -> MEC: Checkout (JWT)
-MEC -> MBE: Auth(x€, "Reason", JWT, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Alias, MerchantId, TransactionId)
-PSP -> Bank: Auth(x€, "Reason", CCData)
-Bank -> PSP: Need 3d Secure + URL
-PSP -> MBE: Need 3d Secure + URL
-MBE -> MEC: Need 3d Secure + URL + TransactionId
-MEC -> User: Need 3d Secure + URL
-
+... Payment ...
+User -> MEC: Checkout { AliasId }
+MEC -> MBE: Authorize { AliasId, x€, Reason, IdempotentKey }
+MBE -> PSP: Authorize { PspAlias, x€, Reason }
+PSP -> Bank: Authorize { CCData, x€, Reason }
+Bank -> PSP: { 3dSecureRequired, URL }
+PSP -> MBE: { 3dSecureRequired, URL }
+MBE -> MEC: { 3dSecureRequired, URL, TransactionId }
+MEC -> User: { 3dSecureRequired, URL }
 User -> Bank: 2 Factor Pin
 Bank -> User: Ok
-
 User -> MEC: ok?
-Bank -> PSP: 3d Secure OK
-PSP -> MBE: 3d Secure OK, TransactionId
-MBE -> MEC: 3d Secure OK, TransactionId, PurchaseId
+Bank -> PSP: Confirm { 3dSecureOK, ... }
+PSP -> MBE: Confirm { 3dSecureOK, PspTransaction }
+MBE -> MEC: Confirm { 3dSecureOK, TransactionId }
 MEC -> User: OK!
 
-
-MBE -> PSP: Capture Payment (after 20 min)
+... 20 min later ...
+MBE -> PSP: Capture { PspTransactionId }
 
 @enduml

@@ -8,8 +8,8 @@ actor "Merchant" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-PSP -> MBE: changes
-MBE -> PSP: get Report
+PSP -> MBE: Change Notification
+MBE -> PSP: getReport
 PSP -> MBE: Report
 MEC -> MBE: Get Export (UI / API)
 MBE -> MEC: Report (Excel, CSV, PDF)

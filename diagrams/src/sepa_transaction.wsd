@@ -9,24 +9,28 @@ entity "Merchant Backend" as MEC
 control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
-User -> MBE: Prepare Registration
-MBE -> User: JWT Wrapped URL and Id 
-User -> PSP: IBAN, and Account Data
-PSP -> User: Alias
+... Register ...
+User -> MBE: Create Alias
+MBE -> User: { AliasId, Url} 
 
-User -> MBE: Alias
-MBE -> PSP: GetMandat
-PSP -> MBE: Mandat
-MBE -> User: JWT Wrapped Alias and Mandat
+User -> PSP: Register { IBAN, AccountData }
+PSP -> User: PspAlias
 
-User -> MEC: Checkout (JWT)
-MEC -> MBE: Auth(x€, "Reason", JWT, PurchaseId)
-MBE -> PSP: Auth(x€, "Reason", Alias)
-PSP -> MBE: Result
-MBE -> MEC: Result + TransactionId
-MEC -> User: Result
+User -> MBE: Update Alias { PspAlias, AliasId }
+MBE -> PSP: GetMandat { PspAlias }
+PSP -> MBE: { Mandat }
+MBE -> User: { AliasId, Mandat }
 
-PSP -> MBE: Confirmation Payment (up to one 1 business day later)
-MBE -> MEC: Confirmation Payment (PuchaseId, TransactionId)
+... Payment ...
+User -> MEC: Checkout { AliasId }
+MEC -> MBE: Authorize { AliasId, x€, Reason, IdempotentKey }
+MBE -> PSP: Authorize { PspAlias, x€, Reason }
+PSP -> MBE: { Status, PspTransactionId }
+MBE -> MEC: { Status, TransactionId }
+MEC -> User: { Status, TransactionId }
+
+... up to one 1 business day later ...
+PSP -> MBE: Confirmation Payment { PspTransaction }
+MBE -> MEC: Confirmation Payment { PuchaseId, TransactionId }
 
 @enduml

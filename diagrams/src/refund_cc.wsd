@@ -11,11 +11,11 @@ entity "Payment Provider (PSP)" as PSP
 entity "Merchant Backend" as MEC
 
 User -> Merchant: Ask for Redund
-Merchant -> MBE: Initiates Refund (transactionId)
-MBE -> PSP: Process Refund (Alias, amount)
-PSP -> MBE: Confirms Refund
-MBE -> MEC: Notifies about Refund
-MBE -> Merchant: Confirms Refund
+Merchant -> MBE: Refund { transactionId, x€, reason }
+MBE -> PSP: Refund { PspAlias, x€, reason }
+PSP -> MBE: { Status PspTransaction }
+MBE -> MEC: Notifies { PurchaseId, Transaction, ...}
+MBE -> Merchant: { Status }
 Merchant -> User: Confirms Refund
 
 @enduml
