@@ -11,15 +11,15 @@ package BaseData {
         name: string
     }
 
-    class paymentmethod << TABLE >>{
+    class payment_method << TABLE >>{
         id: string(3)
         --
         name: string
     }
 
-    class psp_paymentmethod << TABLE >>{
+    class psp_payment_method << TABLE >>{
         psp_id: string(3)
-        paymentmethod_id: string(3)
+        payment_method_id: string(3)
         --
     }
 
@@ -70,8 +70,8 @@ package BaseData {
     merchant_psp .-> psp  
     merchant_api_key .-> merchant 
     merchant <. merchant_user 
-    psp_paymentmethod .-> paymentmethod
-    psp <. psp_paymentmethod
+    psp_payment_method .-> payment_method
+    psp <. psp_payment_method
 }
 
 package TransactionData {
@@ -82,7 +82,7 @@ package TransactionData {
         extra: JSON
         merchant_id: string
         psp_id: string(3)
-        paymentmethod_id: string(3)
+        payment_method_id: string(3)
         activat: bool
         created_at: Timestamp
         last_changed_at: Timestamp
@@ -100,8 +100,8 @@ package TransactionData {
         alias_id: string
         action: AUTH,REVERSAL,REFUND,CAPTURE
         status: SUCESS,FAIL
-        paymentmethod_id: string(3)
-        paymentinfo: JSON
+        payment_method_id: string(3)
+        payment_info: JSON
         merchant_transaction_id: string
         merchant_customer_id: string
         created_at: Timestamp
@@ -110,10 +110,10 @@ package TransactionData {
     alias <. transaction_record
 }
 
-paymentmethod <.- alias
+payment_method <.- alias
 merchant <.- alias
 psp <.- alias
-paymentmethod <.- transaction_record
+payment_method <.- transaction_record
 merchant <.- transaction_record
 
 @enduml
