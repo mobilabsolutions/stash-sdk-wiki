@@ -106,7 +106,7 @@
   Header: Keycloak JWT Token  
   -> 200 { transactionId, pspId, paymentMethod, ccMask, ccExpiryDate, ccType, initialReason, currencyId, balance, merchantPurchaseId, merchantCustomerId, createdAt, refundedAt, chargebackAt, status, events: [ { action, status, amount, currency, reason, createdAt }] } | 401 | 403 | 404
 
-- GET /transactions
+- GET /transactions  
   Header: Keycloak JWT Token  
   Query: { pspId, paymentMethod, ccMask, ccExpiryDate, ccExpiryDateStart, ccExpiryDateEnd, ccType, initialReason, currencyId, balanceStart, balanceEnd, merchantPurchaseId, merchantCustomerId, createdAtStart, createdAtEnd, status, refundedAtStart, refundedAtEnd, chargebackAtStart, chargebackAtEnd, hasEvent, hasNotEvent, offset, pageSize }  
   -> 200 { count, offset, pageSize, data: [ { ...TransactionDetail } ]}
