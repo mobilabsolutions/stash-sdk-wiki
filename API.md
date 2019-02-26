@@ -14,37 +14,37 @@
 ## transaction (Merchant Backend / Dashboard)
 
 - PUT /transaction  
-  Header: secret key, idempotentKey  
+  Header: secret key | Keycloak JWT Token, idempotentKey  
   Charge:  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
   -> {id, amount, currency, status, action}
 
 - PUT /transaction/{id}/refund  
-  Header: secret key, idempotentKey  
+  Header: secret key | Keycloak JWT Token, idempotentKey  
   Refund:  
   { reason, amount, currency }  
   -> {id, amount, currency, status, action}
 
 - PUT /authorization  
-  Header: secret key, idempotentKey  
+  Header: secret key | Keycloak JWT Token, idempotentKey  
   Authorize (just cc):  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
   -> {id, amount, currency, status, action}
 
 - PUT /authorization/{id}/reverse  
-  Header: secret key  
+  Header: secret key | Keycloak JWT Token
   Reverse:  
   {reason}  
   -> {id, amount, currency, status, action}
 
 - PUT /authorization/{id}/capture  
-  Header: secret key  
+  Header: secret key | Keycloak JWT Token
   Capture:  
   {}  
   -> {id, amount, currency, status, action}
 
 - DELETE /alias/{id}  
-  Header: secret key
+  Header: secret key | Keycloak JWT Token
   Delete Alias:  
   null  
   -> { status }
@@ -99,3 +99,14 @@
   Header: Keycloak JWT Token  
   { config }  
   -> 204 | 401 | 403 | 404
+
+## Transaction (Dashboard)
+
+- GET /transactions/{transactionId}  
+  Header: Keycloak JWT Token  
+  -> 200 { transactionId, pspId, paymentMethod, ccMask, ccExpiryDate, ccType, initialReason, currencyId, balance, merchantPurchaseId, merchantCustomerId, createdAt, refundedAt, chargebackAt status, events: [ { action, status, amount, currency, reason, createdAt }] } | 401 | 403 | 404
+
+- GET /transactions
+  Header: Keycloak JWT Token  
+  Query: { pspId, paymentMethod, ccMask, ccExpiryDate, ccExpiryDateStart, ccExpiryDateEnd, ccType, initialReason, currencyId, balance, balanceStart, balanceEnd, merchantPurchaseId, merchantCustomerId, createdAt, createdAtStart, createdAtEnd, status, refundedAt, refundedAtStart, refundedAtEnd, chargebackAt, chargebackAtStart, chargebackAtEnd, hasEvent, hasNotEvent, offset, pageSize }  
+  -> 200 { count, offset, pageSize, data: [ { ...TransactionDetail } ]}
