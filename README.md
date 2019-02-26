@@ -50,3 +50,7 @@ Apart from information found in Wiki this repository will contain other document
 # Architecture
 
 ![backend](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/backend.png?token=ADzKSHlTERcuK3a6BZbeUP-D77YIN56Pks5cdVrKwA%3D%3D)
+
+# PlantUML
+
+[PlantUML Description](https://github.com/mobilabsolutions/payment-sdk-wiki-open/blob/master/diagrams/plantuml.md)
