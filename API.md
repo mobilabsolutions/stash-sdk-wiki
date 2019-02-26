@@ -3,13 +3,16 @@
 ## alias (Customer SDK)
 
 - POST /api/v1/alias  
-  Creates Alias:
-  input -> Alias  
   Header: publishable key
+  Creates Alias:  
+  null  
+  -> 201 { aliasId }
 
 - PUT /api/v1/alias/{id}  
-  Exchange Alias: Alias -> Alias  
-  Header: publishable key
+  Header: publishable key  
+  Add Data to Alias
+  { pspAlias, extra: { ccMask, ccExpiry, ccType, ibanMask, ...} }
+  -> 204 | 400
 
 ## transaction (Merchant Backend / Dashboard)
 
