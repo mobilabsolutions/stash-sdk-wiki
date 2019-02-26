@@ -94,7 +94,7 @@ package TransactionData {
         transaction_id: string
         idempotent_key: string
         currency_id: string(3)
-        amount: decimal
+        amount: int
         merchant_id: string
         reason: string
         alias_id: string
