@@ -20,7 +20,7 @@
   Header: secret key | Keycloak JWT Token, idempotentKey  
   Charge:  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
-  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401
+  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - PUT /api/v1/transaction/{id}/refund  
   Header: secret key | Keycloak JWT Token, idempotentKey  
@@ -32,7 +32,7 @@
   Header: secret key | Keycloak JWT Token, idempotentKey  
   Authorize (just cc):  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
-  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401
+  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - PUT /api/v1/authorization/{id}/reverse  
   Header: secret key | Keycloak JWT Token  
