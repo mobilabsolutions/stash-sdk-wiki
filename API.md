@@ -20,37 +20,37 @@
   Header: secret key | Keycloak JWT Token, idempotentKey  
   Charge:  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
-  -> {id, amount, currency, status, action}
+  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401
 
 - PUT /api/v1/transaction/{id}/refund  
   Header: secret key | Keycloak JWT Token, idempotentKey  
   Refund:  
   { reason, amount, currency }  
-  -> {id, amount, currency, status, action}
+  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - PUT /api/v1/authorization  
   Header: secret key | Keycloak JWT Token, idempotentKey  
   Authorize (just cc):  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
-  -> {id, amount, currency, status, action}
+  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401
 
 - PUT /api/v1/authorization/{id}/reverse  
   Header: secret key | Keycloak JWT Token
   Reverse:  
   {reason}  
-  -> {id, amount, currency, status, action}
+  -> 200 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - PUT /api/v1/authorization/{id}/capture  
   Header: secret key | Keycloak JWT Token
   Capture:  
   null  
-  -> {id, amount, currency, status, action}
+  -> 200 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - DELETE /api/v1/alias/{id}  
   Header: secret key | Keycloak JWT Token
   Delete Alias:  
   null  
-  -> { status }
+  -> 204 | 401 | 404
 
 Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and calls can be POST again
 
@@ -119,4 +119,4 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 - GET /api/v1/transactions  
   Header: Keycloak JWT Token  
   Query: { pspId, paymentMethod, ccMask, ccExpiryDate, ccExpiryDateStart, ccExpiryDateEnd, ccType, ibanMask, initialReason, currencyId, balanceStart, balanceEnd, merchantPurchaseId, merchantCustomerId, createdAtStart, createdAtEnd, status, refundedAtStart, refundedAtEnd, chargebackAtStart, chargebackAtEnd, hasEvent, hasNotEvent, offset, pageSize }  
-  -> 200 { count, offset, pageSize, data: [ { ...TransactionDetail } ]}
+  -> 200 { count, offset, pageSize, data: [ { ...TransactionDetail } ]} | 401 | 403
