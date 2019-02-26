@@ -43,6 +43,7 @@ package BaseData {
         keytype: PUBLIC,PRIVATE
         name: string
         created_at: Timestamp
+        last_changed_at: Timestamp
     }
 
     class merchant_psp << TABLE >>{
