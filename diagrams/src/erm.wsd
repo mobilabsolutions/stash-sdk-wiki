@@ -38,9 +38,9 @@ package BaseData {
         id: int
         --
         mechant_id: string
-        secret_key: string
+        key: string
         is_active: bool
-        keytype: string
+        keytype: PUBLIC,PRIVATE
         name: string
         created_at: Timestamp
     }

@@ -48,3 +48,54 @@
   Delete Alias:  
   null  
   -> { status }
+
+## BaseData (Dashboard)
+
+- GET /merchant/{merchantId}  
+  Header: Keycloak JWT Token  
+  -> 200 { name, email, defaultCurrency } | 401 | 403 | 404
+
+- PUT/PATCH /merchant/{merchantId}  
+  Header: Keycloak JWT Token  
+  { name, email, defaultCurrency }  
+  -> 204 | 400 | 401 | 403 | 404
+
+- GET /merchant/{merchantId}/api-key  
+  Header: Keycloak JWT Token  
+  -> 200 { count, data: [ { id, name, keyType }] } | 401 | 403 | 404
+
+- POST /merchant/{merchantId}/api-key  
+  Header: Keycloak JWT Token  
+  { name, keyType }  
+  -> 201 { id, key } | 400 | 401 | 403
+
+- GET /merchant/{merchantId}/api-key/{apiKeyId}  
+  Header: Keycloak JWT Token  
+  -> 200 { id, name, keyType } | 401 | 403 | 404
+
+- PATCH /merchant/{merchantId}/api-key/{apiKeyId}  
+  Header: Keycloak JWT Token  
+  { name }  
+  -> 204 | 400 | 401 | 403 | 404
+
+- DELETE /merchant/{merchantId}/api-key/{apiKeyId}  
+  Header: Keycloak JWT Token  
+  -> 204 | 401 | 403 | 404
+
+- GET /merchant/{merchantId}/psp  
+  Header: Keycloak JWT Token  
+  -> 200 { count, data: [ { config } ] } | 401 | 403
+
+- POST /merchant/{merchantId}/psp  
+  Header: Keycloak JWT Token  
+  { pspId, config }  
+  -> 201 { pspId } | 400 | 401 | 403
+
+- GET /merchant/{merchantId}/psp/{pspId}  
+  Header: Keycloak JWT Token  
+  -> 200 { config } | 401 | 403 | 404
+
+- PUT /merchant/{merchantId}/psp/{pspId}  
+  Header: Keycloak JWT Token  
+  { config }  
+  -> 204 | 401 | 403 | 404
