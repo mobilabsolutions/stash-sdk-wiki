@@ -40,7 +40,7 @@
 - PUT /api/v1/authorization/{id}/capture  
   Header: secret key | Keycloak JWT Token
   Capture:  
-  {}  
+  null  
   -> {id, amount, currency, status, action}
 
 - DELETE /api/v1/alias/{id}  
@@ -48,6 +48,8 @@
   Delete Alias:  
   null  
   -> { status }
+
+Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and calls can be POST again
 
 ## BaseData (Dashboard)
 
