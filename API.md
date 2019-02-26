@@ -10,7 +10,7 @@
 
 - PUT /api/v1/alias/{id}  
   Header: publishable key  
-  Add Data to Alias
+  Add Data to Alias:  
   { pspAlias, extra: { ccMask, ccExpiry, ccType, ibanMask, ...} }  
   -> 204 | 400
 
