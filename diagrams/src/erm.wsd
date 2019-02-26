@@ -35,11 +35,13 @@ package BaseData {
     }
 
     class merchant_api_key << TABLE >>{
+        id: int
         mechant_id: int
         secret_key: string
         --
         is_active: bool
         keytype: string
+        name: string
         created_at: Timestamp
     }
 
@@ -89,6 +91,7 @@ package TransactionData {
         id: int
         --
         transaction_id: string
+        idempotent_key: string
         currency_id: string(3)
         amount: decimal
         merchant_id: int

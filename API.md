@@ -13,31 +13,31 @@
 
 ## transaction (Merchant Backend / Dashboard)
 
-- POST /transaction  
-  Header: secret key  
+- PUT /transaction  
+  Header: secret key, idempotentKey  
   Charge:  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
   -> {id, amount, currency, status, action}
 
-- POST /transaction/{id}/refund  
-  Header: secret key  
+- PUT /transaction/{id}/refund  
+  Header: secret key, idempotentKey  
   Refund:  
-  { reason }  
+  { reason, amount, currency }  
   -> {id, amount, currency, status, action}
 
-- POST /authorization  
-  Header: secret key  
+- PUT /authorization  
+  Header: secret key, idempotentKey  
   Authorize (just cc):  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
   -> {id, amount, currency, status, action}
 
-- POST /authorization/{id}/reverse  
+- PUT /authorization/{id}/reverse  
   Header: secret key  
   Reverse:  
   {reason}  
   -> {id, amount, currency, status, action}
 
-- POST /authorization/{id}/capture  
+- PUT /authorization/{id}/capture  
   Header: secret key  
   Capture:  
   {}  
