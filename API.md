@@ -108,5 +108,5 @@
 
 - GET /transactions
   Header: Keycloak JWT Token  
-  Query: { pspId, paymentMethod, ccMask, ccExpiryDate, ccExpiryDateStart, ccExpiryDateEnd, ccType, initialReason, currencyId, balance, balanceStart, balanceEnd, merchantPurchaseId, merchantCustomerId, createdAt, createdAtStart, createdAtEnd, status, refundedAt, refundedAtStart, refundedAtEnd, chargebackAt, chargebackAtStart, chargebackAtEnd, hasEvent, hasNotEvent, offset, pageSize }  
+  Query: { pspId, paymentMethod, ccMask, ccExpiryDate, ccExpiryDateStart, ccExpiryDateEnd, ccType, initialReason, currencyId, balanceStart, balanceEnd, merchantPurchaseId, merchantCustomerId, createdAtStart, createdAtEnd, status, refundedAtStart, refundedAtEnd, chargebackAtStart, chargebackAtEnd, hasEvent, hasNotEvent, offset, pageSize }  
   -> 200 { count, offset, pageSize, data: [ { ...TransactionDetail } ]}
