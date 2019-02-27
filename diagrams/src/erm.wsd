@@ -51,8 +51,8 @@ package TransactionData {
         psp_alias: string
         extra: JSON
         merchant_id: string
-        psp_id: string(3)
-        payment_method_id: string(3)
+        psp: string
+        payment_method: string
         activat: bool
         created_at: Timestamp
         last_changed_at: Timestamp
@@ -70,7 +70,7 @@ package TransactionData {
         alias_id: string
         action: AUTH,REVERSAL,REFUND,CAPTURE
         status: SUCESS,FAIL
-        payment_method_id: string(3)
+        payment_method: string
         payment_info: JSON
         merchant_transaction_id: string
         merchant_customer_id: string
