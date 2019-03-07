@@ -15,7 +15,7 @@ Apart from information found in Wiki this repository will contain other document
 
 ![erm](/diagrams/out/erm.png)
 
-Engine will be Postgres, in Production GCP hosted
+Engine will be PostgreSQL, in Production GCP hosted
 
 ## Sequence Diagrams
 
