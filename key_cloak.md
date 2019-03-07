@@ -34,4 +34,4 @@ would be to implement these functions our own, because we just need a very limit
 
 ~~for the MVP we go with keycloak and use the Keycloak UI with only ONE user each Merchant.~~
 
-The UI of Keycloak does not fulfill out needs, we go with an own user management
+The UI of Keycloak does not fulfill our needs, we go with an own user management
