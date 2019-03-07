@@ -13,13 +13,13 @@ Apart from information found in Wiki this repository will contain other document
 
 ## Database
 
-![erm](https://github.com/mobilabsolutions/payment-sdk-wiki-open/tree/master/diagrams/out/erm.png)
+![erm](/diagrams/out/erm.png)
 
 Engine will be Postgres, in Production GCP hosted
 
 ## Sequence Diagrams
 
-![cc_registration](https://github.com/mobilabsolutions/payment-sdk-wiki-open/tree/master/diagrams/out/cc_registration.png)
+![cc_registration](/diagrams/out/cc_registration.png)
 
 ![cc_payment_registered](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_payment_registered.png?token=ADzKSAPNtN07O-TpkXPpRD7JFfrvtGNlks5cfp4QwA%3D%3D)
 
