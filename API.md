@@ -123,6 +123,8 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 
 ## User Management
 
+**Not Only for Merchant Users**
+
 - POST /api/v1/token  
   { username, password }  
   -> 200 { accessToken: 5MinJWTToken, refreshToken: 24hJWTToken }  
@@ -150,5 +152,4 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 
 - POST /api/v1/user/{userName|email}/forgot-password  
   null  
-  -> 204 | 404?  
-  (does not ha)
+  -> 204 | 404?
