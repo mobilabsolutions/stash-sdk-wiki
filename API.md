@@ -123,27 +123,27 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 
 ## User Management
 
-- POST /api/v1/token
-  { username, password }
-  -> 200 { accessToken: 5MinJWTToken, refreshToken: 24hJWTToken }
+- POST /api/v1/token  
+  { username, password }  
+  -> 200 { accessToken: 5MinJWTToken, refreshToken: 24hJWTToken }  
   (MerchantId and UserId is in the Token, refreshToken can only be used for refresh)
 
-- POST /api/v1/token/refresh
+- POST /api/v1/token/refresh  
   Header: JWT Token (Refresh)  
-  null
+  null  
   -> 200 { accessToken: 5MinJWTToken, refreshToken: 24hJWTToken } | 401 | 403
 
-- PUT /api/v1/user/{userId}
-  Header: JWT Token
-  { firstName, lastName }
+- PUT /api/v1/user/{userId}  
+  Header: JWT Token  
+  { firstName, lastName }  
   -> 204 | 400 | 401 | 403 | 404
 
-- POST /api/v1/user/{userId}/password
-  Header: JWT Token
-  { oldPassword, newPassword }
+- POST /api/v1/user/{userId}/password  
+  Header: JWT Token  
+  { oldPassword, newPassword }  
   -> 204 | 400 | 401 | 403 | 404
 
-- POST /api/v1/user/{userName|email}/reset-password
-  null
-  -> 204 | 404?
+- POST /api/v1/user/{userName|email}/reset-password  
+  null  
+  -> 204 | 404?  
   (does not ha)
