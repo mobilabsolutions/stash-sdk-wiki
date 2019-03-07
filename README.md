@@ -21,38 +21,38 @@ Engine will be Postgres, in Production GCP hosted
 
 ![cc_registration](/diagrams/out/cc_registration.png)
 
-![cc_payment_registered](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_payment_registered.png?token=ADzKSAPNtN07O-TpkXPpRD7JFfrvtGNlks5cfp4QwA%3D%3D)
+![cc_payment_registered](/diagrams/out/cc_payment_registered.png)
 
-![cc_transaction](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_transaction.png?token=ADzKSKC7FCyrktYKftqjr_2JrYQXqcW8ks5cfp5NwA%3D%3D)
+![cc_transaction](/diagrams/out/cc_transaction.png)
 
-![cc_transaction_3d](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/cc_transaction_3d.png?token=ADzKSMTElBgyA-68q1Y0YV4Ub9cKpZSKks5cfp5jwA%3D%3D)
+![cc_transaction_3d](/diagrams/out/cc_transaction_3d.png)
 
-![apple_pay](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/apple_pay.png?token=ADzKSAYd3yelaRE9zIMJ26eqm_PXzg_4ks5cfp6GwA%3D%3D)
+![apple_pay](/diagrams/out/apple_pay.png)
 
-![refund_cc](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/refund_cc.png?token=ADzKSGQRPJAUpdG6LYVje9bSqukxKzZZks5cfp6bwA%3D%3D)
+![refund_cc](/diagrams/out/refund_cc.png)
 
-![chargeback_cc](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/chargeback_cc.png?token=ADzKSJO7wvMZXxRWqSiyHNdO41OKxY5pks5cfp6uwA%3D%3D)
+![chargeback_cc](/diagrams/out/chargeback_cc.png)
 
-![sepa_registration](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/sepa_registration.png?token=ADzKSPYs1xRhIIs27YsiaX5aLhDwiJWKks5cfp7BwA%3D%3D)
+![sepa_registration](/diagrams/out/sepa_registration.png)
 
-![sepa_payment_registered](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/sepa_payment_registered.png?token=ADzKSLvoGp9Zsp54cwLaU0efxVeODzGOks5cfp7bwA%3D%3D)
+![sepa_payment_registered](/diagrams/out/sepa_payment_registered.png)
 
-![sepa_transaction](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/sepa_transaction.png?token=ADzKSBByEw-Kqr_ZjWGQLqVRPsfqRll8ks5cfp7zwA%3D%3D)
+![sepa_transaction](/diagrams/out/sepa_transaction.png)
 
-![sepa_failed](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/sepa_transaction_fail.png?token=ADzKSMo2J8Eil6lv_qA1CSehcq4fLSgIks5cfp9gwA%3D%3D)
+![sepa_failed](/diagrams/out/sepa_transaction_fail.png)
 
-![paypal](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/paypal.png?token=ADzKSIEe4TWLFxfWV3M_4LBUiWX4DSynks5cfp90wA%3D%3D)
+![paypal](/diagrams/out/paypal.png)
 
-![klarna](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/klarna.png?token=ADzKSLWeZQjb_mjhoRhgU8f-wXzz6Ld4ks5cfp-3wA%3D%3D)
+![klarna](/diagrams/out/klarna.png)
 
-![delete_payment](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/delete_payment.png?token=ADzKSO9NTejatMasxScS2M63TkelDmz9ks5cfp_LwA%3D%3D)
+![delete_payment](/diagrams/out/delete_payment.png)
 
-![report](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/report.png?token=ADzKSJBcMbaltiuDQ5-kUw7keA4mi9GUks5cfp_fwA%3D%3D)
+![report](/diagrams/out/report.png)
 
 # Architecture
 
-![backend](https://raw.githubusercontent.com/mobilabsolutions/payment-sdk-wiki-open/master/diagrams/out/backend.png?token=ADzKSOwVLAC1D-DXIKzCYwYiOcY_T0z8ks5cfp_ywA%3D%3D)
+![backend](/diagrams/out/backend.png)
 
 # PlantUML
 
-[PlantUML Description](https://github.com/mobilabsolutions/payment-sdk-wiki-open/blob/master/diagrams/plantuml.md)
+[PlantUML Description](/diagrams/plantuml.md)
