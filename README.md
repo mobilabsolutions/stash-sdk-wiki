@@ -9,7 +9,7 @@ Apart from information found in Wiki this repository will contain other document
 
 ## API
 
-[Api Description](https://github.com/mobilabsolutions/payment-sdk-wiki-open/blob/master/API.md)
+[Api Description](/API.md)
 
 ## Database
 
