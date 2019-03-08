@@ -11,7 +11,7 @@ entity "Payment Provider (PSP)" as PSP
 
 User -> MEC: Checkout { AliasId }
 MEC -> MBE: Authorize { AliasId, x€, Reason, IdempotentKey }
-MBE -> PSP: Authorize { PspAlias, x€, Reason }
+MBE -> PSP: Authorize { Mandate, IBAN, x€, Reason }
 PSP -> MBE: { Status, PspTransactionId }
 MBE -> MEC: { Status, TransactionId }
 MEC -> User: { Status, TransactionId }

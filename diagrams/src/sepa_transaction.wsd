@@ -13,18 +13,17 @@ entity "Payment Provider (PSP)" as PSP
 User -> MBE: Create Alias
 MBE -> User: { AliasId, Url} 
 
-User -> PSP: Register { IBAN, AccountData }
-PSP -> User: PspAlias
+User -> MBE: Update Alias { AliasId, IBAN, AccountData }
 
-User -> MBE: Update Alias { PspAlias, AliasId, ibanMask }
-MBE -> PSP: GetMandat { PspAlias }
-PSP -> MBE: { Mandat }
+MBE -> PSP: Register { IBAN, AccountData }
+PSP -> MBE: { Mandate }
+
 MBE -> User: { AliasId, Mandat }
 
 ... Payment ...
 User -> MEC: Checkout { AliasId }
 MEC -> MBE: Authorize { AliasId, x€, Reason, IdempotentKey }
-MBE -> PSP: Authorize { PspAlias, x€, Reason }
+MBE -> PSP: Authorize { Mandate, IBAN, x€, Reason }
 PSP -> MBE: { Status, PspTransactionId }
 MBE -> MEC: { Status, TransactionId }
 MEC -> User: { Status, TransactionId }
