@@ -16,6 +16,6 @@ User -> MBE: Update Alias { AliasId, IBAN, AccountData }
 MBE -> PSP: Register { IBAN, AccountData }
 PSP -> MBE: { Mandate }
 
-MBE -> User: { AliasId, Mandat }
+MBE -> User: { Mandate }
 
 @enduml
