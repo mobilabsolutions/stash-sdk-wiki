@@ -158,5 +158,5 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 
 - POST /api/v1/merchant
   Header: SECRET Mobilab KEY  
-  { id, name, email }
+  { id, name, email, initPassword }
   -> 204 | 400
