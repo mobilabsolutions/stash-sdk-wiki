@@ -11,8 +11,8 @@
 - PUT /api/v1/alias/{id}  
   Header: publishable key  
   Add Data to Alias:  
-  { pspAlias, extra: { ccMask, ccExpiry, ccType, ibanMask, ...} }  
-  -> 204 | 400
+  { pspAlias, extra: { ccMask, ccExpiry, ccType, IBAN, ...} }  
+  -> 204 | 400 | 404
 
 ## transaction (Merchant Backend / Dashboard)
 
