@@ -153,3 +153,10 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 - POST /api/v1/user/{userName|email}/forgot-password  
   null  
   -> 204 | 404?
+
+## Merchant Creation
+
+- POST /api/v1/merchant
+  Header: SECRET Mobilab KEY  
+  { id, name, email }
+  -> 204 | 400
