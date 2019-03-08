@@ -9,7 +9,7 @@ control "MobiLab Backend" as MBE
 entity "Payment Provider (PSP)" as PSP
 
 User -> MBE: Create Alias
-MBE -> User: { AliasId, Url} 
+MBE -> User: { AliasId } 
 
 User -> MBE: Update Alias { AliasId, IBAN, AccountData }
 
