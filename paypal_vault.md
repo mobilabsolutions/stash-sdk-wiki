@@ -1,0 +1,45 @@
+#PayPal Vault Integration
+
+We would like to have PayPal Vault integration, and that's possible by using:
+
+- The [Braintree SDK](https://developers.braintreepayments.com/start/hello-client/android/v2) for clients and backend
+- [PayPal Vault](https://developers.braintreepayments.com/guides/paypal/vault/android/v2) for storing and reusing PayPal payment information
+
+##PayPal Vault Flow
+
+1. **Client**: Initializes the SDK if necessary - Request Braintree client token from **Backend** or initializes Braintree with [tokenization key](https://developers.braintreepayments.com/guides/authorization/tokenization-key/android/v2) 
+2. **Client**: Redirects to PayPal login and user enters PayPal credentials
+3. **Client**: Creates billing agreement
+4. **Client**: Receives payment method nonce from Braintree, and sends it to the **Backend**
+5. **Backend**: [Creates](https://developers.braintreepayments.com/guides/payment-methods/java#create) payment method based on payment method nonce, and gets the payment token (alias) from Braintree
+
+##PayPal Transaction Flow
+
+1. **Client**: Collects device data, and sends it to the **Backend**
+2. **Backend**: [Creates](https://developers.braintreepayments.com/guides/paypal/server-side/java) the transaction at Braintree
+
+##API Design
+###Alias
+
+- POST /api/v1/alias  
+  Header: publishable key
+  Creates Alias:  
+  { paymentMethodNonce }
+  -> 201 { aliasId }
+
+- PUT /api/v1/alias/{id}  
+  Header: publishable key  
+  Add Data to Alias:  
+  { pspAlias, extra: { email, billingAgreementId } }  
+  -> 204 | 400 | 404
+
+###Transaction
+
+- PUT /api/v1/transaction  
+  Header: secret key | JWT Token, idempotentKey  
+  Charge:  
+  {aliasId, paymentData: {amount, currency, reason}, payPalData: { deviceData}, purchaseId, customerId}  
+  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401 | 404
+
+
+
