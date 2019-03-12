@@ -9,14 +9,14 @@ We would like to have PayPal Vault integration, and that's possible by using:
 
 1. **Client**: Initializes the SDK if necessary - Request Braintree client token from **Backend** or initializes Braintree with [tokenization key](https://developers.braintreepayments.com/guides/authorization/tokenization-key/android/v2) 
 2. **Client**: Redirects to PayPal login and user enters PayPal credentials
-3. **Client**: Creates billing agreement
+3. **Client**: Creates billing agreement, and sends the id to the **Backend**
 4. **Client**: Receives payment method nonce from Braintree, and sends it to the **Backend**
-5. **Backend**: [Creates](https://developers.braintreepayments.com/guides/payment-methods/java#create) payment method based on payment method nonce, and gets the payment token (alias) from Braintree
+5. **Client**: Collects device data, and sends it to the **Backend**
+6. **Backend**: [Creates](https://developers.braintreepayments.com/guides/payment-methods/java#create) payment method based on payment method nonce, and gets the payment token (alias) from Braintree
 
 ## PayPal Transaction Flow
 
-1. **Client**: Collects device data, and sends it to the **Backend**
-2. **Backend**: [Creates](https://developers.braintreepayments.com/guides/paypal/server-side/java) the transaction at Braintree
+1. **Backend**: [Creates](https://developers.braintreepayments.com/guides/paypal/server-side/java) the transaction at Braintree
 
 ## API Design
 ### Alias
@@ -24,13 +24,13 @@ We would like to have PayPal Vault integration, and that's possible by using:
 - POST /api/v1/alias  
   Header: publishable key
   Creates Alias:  
-  { paymentMethodNonce }
+  null
   -> 201 { aliasId }
 
 - PUT /api/v1/alias/{id}  
   Header: publishable key  
   Add Data to Alias:  
-  { pspAlias, extra: { email, billingAgreementId } }  
+  { pspAlias, email, extra: { billingAgreementId, paymentMethodNonce, deviceData } }  
   -> 204 | 400 | 404
 
 ### Transaction
@@ -38,7 +38,7 @@ We would like to have PayPal Vault integration, and that's possible by using:
 - PUT /api/v1/transaction  
   Header: secret key | JWT Token, idempotentKey  
   Charge:  
-  {aliasId, paymentData: {amount, currency, reason}, payPalData: { deviceData}, purchaseId, customerId}  
+  {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
   -> 200 | 201 {id, amount, currency, status, action} | 400 | 401 | 404
 
 
