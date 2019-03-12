@@ -7,10 +7,10 @@ We would like to have PayPal Vault integration, and that's possible by using:
 
 ## PayPal Vault Flow
 
-1. **Client**: Initializes the SDK if necessary - Request Braintree client token from **Backend** or initializes Braintree with [tokenization key](https://developers.braintreepayments.com/guides/authorization/tokenization-key/android/v2) 
-2. **Client**: Redirects to PayPal login and user enters PayPal credentials
-3. **Client**: Creates billing agreement, and sends the id to the **Backend**
-4. **Client**: Receives payment method nonce from Braintree, and sends it to the **Backend**
+1. **Client**: Initializes the SDK if necessary - Request Braintree client token from the **Backend** or initializes Braintree with [tokenization key](https://developers.braintreepayments.com/guides/authorization/tokenization-key/android/v2) 
+2. **Client**: Redirects to the PayPal login, and user enters PayPal credentials
+3. **Client**: Creates the billing agreement, and sends the billing agreement id to the **Backend**
+4. **Client**: Receives a payment method nonce from Braintree, and sends it to the **Backend**
 5. **Client**: Collects device data, and sends it to the **Backend**
 6. **Backend**: [Creates](https://developers.braintreepayments.com/guides/payment-methods/java#create) payment method based on payment method nonce, and gets the payment token (alias) from Braintree
 
