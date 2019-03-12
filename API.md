@@ -140,7 +140,7 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
   { firstName, lastName }  
   -> 204 | 400 | 401 | 403 | 404
 
-- PUT /api/v1/user/{userId}/password  
+- PUT /api/v1/user/{userId}/change-password  
   Header: JWT Token  
   { oldPassword, newPassword }  
   -> 204 | 400 | 401 | 403 | 404
