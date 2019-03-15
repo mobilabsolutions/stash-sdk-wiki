@@ -109,6 +109,16 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
   Header: JWT Token  
   { config }  
   -> 204 | 401 | 403 | 404
+  
+- PUT /api/v1/merchant/{merchantId}/user/{userId}  
+  Header: JWT Token  
+  { firstName, lastName, locale }  
+  -> 204 | 400 | 401 | 403 | 404
+
+- PUT /api/v1/merchant/{merchantId}/user/{userId}/change-password  
+  Header: JWT Token  
+  { oldPassword, newPassword }  
+  -> 204 | 400 | 401 | 403 | 404
 
 ## Transaction (Dashboard)
 
@@ -134,16 +144,6 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
   Header: JWT Token (Refresh)  
   null  
   -> 200 { accessToken: 5MinJWTToken, refreshToken: 24hJWTToken } | 401 | 403
-
-- PUT /api/v1/user/{userId}  
-  Header: JWT Token  
-  { firstName, lastName, locale }  
-  -> 204 | 400 | 401 | 403 | 404
-
-- PUT /api/v1/user/{userId}/change-password  
-  Header: JWT Token  
-  { oldPassword, newPassword }  
-  -> 204 | 400 | 401 | 403 | 404
 
 - POST /api/v1/user/{userName|email}/reset-password  
   { newPassword, changeToken }  
