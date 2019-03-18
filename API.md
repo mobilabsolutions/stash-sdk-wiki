@@ -162,4 +162,4 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 
 - POST /api/v1/merchant (only for admin user)
   { id, name, email, default_currency_id }
-  -> 204 | 400
+  -> 204 | 400 | 401 | 403
