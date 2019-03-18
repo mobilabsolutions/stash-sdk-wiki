@@ -160,6 +160,6 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 
 ## Merchant Creation
 
-- POST /api/v1/merchant   * only for admin user
+- POST /api/v1/merchant (only for admin user)
   { id, name, email, default_currency_id }
   -> 204 | 400
