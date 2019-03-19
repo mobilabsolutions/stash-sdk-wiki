@@ -13,7 +13,7 @@
 ## Payment Method Registration
 
 - With Adyen it is possible to [create token](https://docs.adyen.com/developers/features/tokenization/creating-tokens) - save the payment method. Payment request should be sent to Adyen, but with an amount of 0, which means that the card information will only be validated, without a charge.
-- We need to send shopperReference (customerId in our case), and paymentMethod.storeDetails to be true
+- We need to send shopperReference (customerId in our case), and paymentMethod.storeDetails set to true to Adyen.
 
 ## Making Transactions
 
