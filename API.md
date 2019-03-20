@@ -102,7 +102,7 @@ Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and
 
 - POST /api/v1/merchant/{merchantId}/psp  
   Header: JWT Token  
-  { pspId, config }  
+  { pspId, ...config }  
   -> 201 { pspId } | 400 | 401 | 403
 
 - GET /api/v1/merchant/{merchantId}/psp/{pspId}  
