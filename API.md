@@ -16,7 +16,13 @@ https://payment-dev.mblb.net/api/v1/swagger-ui.html
   Header: publishable key  
   Add Data to Alias:  
   { pspAlias, extra: { ccMask, ccExpiry, ccType, IBAN, ...} }  
-  -> 204 | 400 | 404
+  -> 204 | 400 | 404   
+  
+- DELETE /api/v1/alias/{id}  
+  Header: secret key | JWT Token  
+  Delete Alias:  
+  null  
+  -> 204 | 401 | 404
 
 ## transaction (Merchant Backend / Dashboard)
 
@@ -49,12 +55,6 @@ https://payment-dev.mblb.net/api/v1/swagger-ui.html
   Capture:  
   null  
   -> 200 {id, amount, currency, status, action} | 400 | 401 | 404
-
-- DELETE /api/v1/alias/{id}  
-  Header: secret key | JWT Token  
-  Delete Alias:  
-  null  
-  -> 204 | 401 | 404
 
 Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and calls can be POST again
 
