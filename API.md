@@ -30,31 +30,31 @@ https://payment-dev.mblb.net/api/v1/swagger-ui.html
   Header: secret key | JWT Token, idempotentKey, test(optional)
   Charge:  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
-  -> 201 {id, amount, currency, status, action} | 400 | 401 | 404
+  -> 201 {id, amount, currency, status, action, errorMessage} | 400 | 401 | 404
 
 - PUT /api/v1/authorization/{id}/refund  
   Header: secret key | JWT Token, idempotentKey, test(optional)
   Refund:  
   { reason, amount, currency }  
-  -> 201 {id, amount, currency, status, action} | 400 | 401 | 404
+  -> 201 {id, amount, currency, status, action, errorMessage} | 400 | 401 | 404
 
 - PUT /api/v1/preauthorization  
   Header: secret key | JWT Token, idempotentKey, test(optional)
   Authorize (just cc):  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
-  -> 201 {id, amount, currency, status, action} | 400 | 401 | 404
+  -> 201 {id, amount, currency, status, action, errorMessage} | 400 | 401 | 404
 
 - PUT /api/v1/preauthorization/{id}/reverse  
   Header: secret key | JWT Token, test(optional)
   Reverse:  
   {reason}  
-  -> 200 {id, amount, currency, status, action} | 400 | 401 | 404
+  -> 200 {id, amount, currency, status, action, errorMessage} | 400 | 401 | 404
 
 - PUT /api/v1/preauthorization/{id}/capture  
   Header: secret key | JWT Token, test(optional) 
   Capture:  
   null  
-  -> 200 {id, amount, currency, status, action} | 400 | 401 | 404
+  -> 200 {id, amount, currency, status, action, errorMessage} | 400 | 401 | 404
 
 Maybe Put the idempotentKey in the Url or Body, could make the usage easier, and calls can be POST again
 
