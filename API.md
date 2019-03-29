@@ -30,19 +30,19 @@ https://payment-dev.mblb.net/api/v1/swagger-ui.html
   Header: secret key | JWT Token, idempotentKey  
   Charge:  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
-  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401 | 404
+  -> 201 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - PUT /api/v1/authorization/{id}/refund  
   Header: secret key | JWT Token, idempotentKey  
   Refund:  
   { reason, amount, currency }  
-  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401 | 404
+  -> 201 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - PUT /api/v1/preauthorization  
   Header: secret key | JWT Token, idempotentKey  
   Authorize (just cc):  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
-  -> 200 | 201 {id, amount, currency, status, action} | 400 | 401 | 404
+  -> 201 {id, amount, currency, status, action} | 400 | 401 | 404
 
 - PUT /api/v1/preauthorization/{id}/reverse  
   Header: secret key | JWT Token  
