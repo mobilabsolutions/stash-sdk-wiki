@@ -7,19 +7,19 @@ https://payment-dev.mblb.net/api/v1/swagger-ui.html
 ## alias (Customer SDK)
 
 - POST /api/v1/alias  
-  Header: publishable key, psp test mode(optional)
+  Header: publishableKey, pspType, idempotentKey, pspTestMode(optional)
   Creates Alias:  
   null  
-  -> 201 { aliasId }
+  -> 201 { aliasId, PspAliasConfigModel }
 
 - PUT /api/v1/alias/{id}  
-  Header: publishable key  
+  Header: publishableKey  
   Add Data to Alias:  
   { pspAlias, extra: { ccMask, ccExpiry, ccType, IBAN, ...} }  
   -> 204 | 400 | 404   
   
 - DELETE /api/v1/alias/{id}  
-  Header: secret key | JWT Token  
+  Header: secretKey | JWT Token, pspTestMode (optional), aliasId
   Delete Alias:  
   null  
   -> 204 | 401 | 404
@@ -27,31 +27,31 @@ https://payment-dev.mblb.net/api/v1/swagger-ui.html
 ## transaction (Merchant Backend / Dashboard)
 
 - PUT /api/v1/authorization  
-  Header: secret key | JWT Token, idempotentKey, psp test mode(optional)
-  Charge:  
+  Header: secretKey | JWT Token, idempotentKey, pspTestMode (optional)
+  Authorize:  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
   -> 201 {id, amount, currency, status, action, additionalInfo} | 400 | 401 | 404
 
 - PUT /api/v1/authorization/{id}/refund  
-  Header: secret key | JWT Token, idempotentKey, psp test mode(optional)
+  Header: secretKey | JWT Token, idempotentKey, pspTestMode (optional)
   Refund:  
   { reason, amount, currency }  
   -> 201 {id, amount, currency, status, action, additionalInfo} | 400 | 401 | 404
 
 - PUT /api/v1/preauthorization  
-  Header: secret key | JWT Token, idempotentKey, psp test mode(optional)
-  Authorize (just cc):  
+  Header: secretKey | JWT Token, idempotentKey, pspTestMode (optional)
+  Preauthorize (just cc):  
   {aliasId, paymentData: {amount, currency, reason}, purchaseId, customerId}  
   -> 201 {id, amount, currency, status, action, additionalInfo} | 400 | 401 | 404
 
 - PUT /api/v1/preauthorization/{id}/reverse  
-  Header: secret key | JWT Token, psp test mode(optional)
+  Header: secretKey | JWT Token, pspTestMode (optional)
   Reverse:  
   {reason}  
   -> 200 {id, amount, currency, status, action, additionalInfo} | 400 | 401 | 404
 
 - PUT /api/v1/preauthorization/{id}/capture  
-  Header: secret key | JWT Token, psp test mode(optional) 
+  Header: secretKey | JWT Token, pspTestMode (optional) 
   Capture:  
   null  
   -> 200 {id, amount, currency, status, action, additionalInfo} | 400 | 401 | 404
