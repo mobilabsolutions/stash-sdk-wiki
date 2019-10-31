@@ -1,7 +1,6 @@
 # Payment SDK General Wiki and Documentation
 
-This repository contains Wiki with general instructions and rules for contributing to Payment SDK.
-Apart from information found in Wiki this repository will contain other documents that might be useful when contributing and developing
+This repository contains a Wiki with general instructions for contributing to the Stash! SDK.
 
 ## Structure
 
