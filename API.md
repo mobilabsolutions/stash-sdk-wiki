@@ -1,9 +1,5 @@
 # API
 
-## Swagger
-
-https://payment-dev.mblb.net/api/v1/swagger-ui.html
-
 ## alias (Customer SDK)
 
 - POST /api/v1/alias  
